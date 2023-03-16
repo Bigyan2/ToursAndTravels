@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgb(0,0,50,0.8),rgb(0,0,50,0.8)), url(bsr-travel-hero..jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.form-box{
+    width: 90%;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #AEAEAE;
+    padding: 35px 60px 20px;
+    text-align: center;
+    border-radius: 50px;
+    
+}
+
+
+.form-box h1{
+    font-size: 25px;
+    margin-bottom: 40px;
+    color: black;
+    position: relative;
+}
+
+.form-box h1::after{
+    content: '';
+    height: 4px;
+    border-radius: 3px;
+    background: #3c00a0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo img{
+    width: 200px;
+    height: 200px;
+    margin-top: -30px;
+    margin-bottom: 15px;
+   
+
+}
+
+.input-field{
+    width: 100%;
+    background: whitesmoke;
+    margin: 15px 0;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+}
+
+
+input{
+    width: 90%;
+    background: whitesmoke;
+    border: 0;
+    outline: 0;
+    padding: 14px 10px;
+}
+
+.input-field i{
+    margin-left:15px;
+    color: black;
+}
+
+.login_button{
+    /* padding: 12px 110px 12px 110px; */
+    padding: 10px 0px;
+    width:100%;
+    color: white;
+    background-color: #052577;
+    font-style: bold;
+    border: none;
+    border-radius: 25px;
+    font-size: 14px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+
+}
+
+
+.login_button:hover{
+    background-color: rgb(1, 66, 146);
+    opacity: 5px;
+    cursor: pointer;
+}
+
+.login_button:active{
+    background-color: rgb(0, 115, 255);
+}
+
+
+
+.no_account{
+    font-size: 12px;
+}
+a:active{
+    color: rgb(0, 115, 255);
+    cursor: pointer;
+    font-size: 15;
+    
+}
+@media (max-width:500px) {
+    .form-box{
+        width: 96%;
+        
+    }
+    
+}
+@media (max-width:400px) {
+    
+    .logo img{
+        width: 100px;
+       height: 100px;
+    }
+}
+ 
+
+
