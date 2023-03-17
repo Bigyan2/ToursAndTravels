@@ -5,33 +5,28 @@
     box-sizing: border-box;
 }
 
-.container{
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgb(0,0,50,0.8),rgb(0,0,50,0.8)), url(bsr-travel-hero..jpg);
-    background-position: center;
-    background-size: cover;
-    position: relative;
-}
 
 .form-box{
-    width: 90%;
-    max-width: 450px;
+    width: 380px;
+    max-width: 440px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     background: #AEAEAE;
-    padding: 35px 60px 20px;
+    padding: 15px 50px;
     text-align: center;
-    border-radius: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 0px black;
     
 }
 
 
+
 .form-box h1{
     font-size: 25px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    margin-top: 15px;
     color: black;
     position: relative;
 }
@@ -47,10 +42,10 @@
 }
 
 .logo img{
-    width: 200px;
-    height: 200px;
-    margin-top: -30px;
-    margin-bottom: 15px;
+    width: 150px;
+    height: 150px;
+   
+    margin-bottom: 9px;
    
 
 }
@@ -66,11 +61,11 @@
 
 
 input{
-    width: 90%;
+    width: 100%;
     background: whitesmoke;
     border: 0;
     outline: 0;
-    padding: 14px 10px;
+    padding: 13px 10px;
 }
 
 .input-field i{
@@ -89,7 +84,7 @@ input{
     border-radius: 25px;
     font-size: 14px;
     margin-bottom: 15px;
-    margin-top: 20px;
+    margin-top: 15px;
 
 }
 
@@ -105,7 +100,10 @@ input{
 }
 
 
-
+.click_here{
+    font-size: 12px;
+    margin-right: 180px ;
+}
 .no_account{
     font-size: 12px;
 }
@@ -117,7 +115,7 @@ a:active{
 }
 @media (max-width:500px) {
     .form-box{
-        width: 96%;
+        width: 90%;
         
     }
     
@@ -129,6 +127,11 @@ a:active{
        height: 100px;
     }
 }
- 
+ .login_button img{
+     width: 17px;
+     margin-bottom: -4px;
+     
+ }
+
 
 
