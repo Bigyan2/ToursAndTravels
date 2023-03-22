@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +23,7 @@ session_start();
             <ul class="navbar">
                 <li>
                     <a class="home" <a href="Index.php">Home</a></a>
-                    <a class="package" <a href="#package">Packages</a></a>
+                    <a class="package" <a href="../Package/customize.php">Packages</a></a>
                     <a class="booking" <a href="#booking">Booking</a></a>'
                     <?php
                     if (isset($_SESSION['id'])){

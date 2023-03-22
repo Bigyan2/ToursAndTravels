@@ -12,6 +12,7 @@ include ('../../Backend/config.php');
 	<title>Log in page</title>
 </head>
 <body>
+
     <div class="container">
         <div class="form-box">
             <div class="logo">
@@ -50,10 +51,7 @@ include ('../../Backend/config.php');
                         <img src="google.png" alt="google">
                         Login with google
                     </button>
-                    <p class="no_account">No account : <a href="SignUp.html">Sign Up</a></p>
-
-
-                    
+                    <p class="no_account">No account : <a href="SignUp.php">Sign Up</a></p>
                 </div>
             </form>
         </div>
