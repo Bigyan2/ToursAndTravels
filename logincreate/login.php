@@ -12,7 +12,6 @@ include ('../../Backend/config.php');
 	<title>Log in page</title>
 </head>
 <body>
-
     <div class="container">
         <div class="form-box">
             <div class="logo">
@@ -28,7 +27,7 @@ include ('../../Backend/config.php');
                      <div class="input-field">
                          
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="Username" name="username">
+                        <input type="text" placeholder="Username" name="username" required>
 
 
                     </div>
@@ -36,7 +35,7 @@ include ('../../Backend/config.php');
                     <div class="input-field">
                         
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Password" name= "password">
+                        <input type="password" placeholder="Password" name= "password" required>
                         
 
                     </div>

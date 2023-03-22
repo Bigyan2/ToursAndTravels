@@ -29,31 +29,31 @@
             </div>
 
             <h1>Holiday Hype</h1>
-            <form action="../../Backend/signup.php" method="post">
+            <form  action ="../../Backend/signup.php" method="post">
                 <div class="input-group">
                     <div class="input-field">
                          
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="Name" name="name">
+                        <input type="text" placeholder="Name" name="name" required>
                     </div>
                     
 
                      <div class="input-field">
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="email" placeholder="Email" name="email">
+                        <input type="email" placeholder="Email" name="email" required>
                     </div>
 
                     <div class="input-field">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Password" name="password">
+                        <input type="password" placeholder="Password" name="password" required>
                     </div>
 
                     <div class="input-field">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Confirm Password" name="confirm_password">
+                        <input type="password" placeholder="Confirm Password" name="confirm_password" required>
                     </div>
 
-                    <button class="login_button">
+                    <button class="login_button" name="submit">
                         Sign Up</button>
                    
                     <p class="no_account">Already have a account : <a href="login.php">Login</a></p>

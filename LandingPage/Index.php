@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="text/javascript" src="../display/jquery.min.js"></script>
+    <script type="text/javascript" src="../display/toastr.min.js"></script>
+    <link href="../display/toastr.min.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +18,13 @@
    
 </head>
 <body>
-
+    <?php
+        session_start();
+        if (isset($_SESSION['ok'])){
+            echo '<script>toastr.success("'.$_SESSION['ok'].'");</script>';
+            unset($_SESSION['ok']);
+        }
+    ?>
     <div class="content" id="home"> 
         <nav>
             <img src="./logo.png" class="logo" alt="Logo" title="Holiday Hype">
