@@ -32,13 +32,13 @@
             <ul class="navbar">
                 <li>
                     <a class="home" <a href="Index.php">Home</a></a>
-                    <a class="package" <a href="../Package/customize.php">Packages</a></a>
+                    <a class="package" <a href="../Package/suggestionLocation.php">Packages</a></a>
                     <a class="booking" <a href="#booking">Booking</a></a>'
                     <?php
                     if (isset($_SESSION['id'])){
                         echo '<a class="signup-btn" <a href="../../Backend/logout.php">Log Out</a></a>';
                     } else {
-                        echo '<a class="signup-btn" <a href="../logincreate/SignUp.html">Sign Up</a></a>';
+                        echo '<a class="signup-btn" <a href="../logincreate/SignUp.php">Sign Up</a></a>';
                         echo '<a class="login-btn" <a href="../logincreate/login.php">Login</a></a>';
                     }
                     ?>
@@ -48,7 +48,7 @@
         <div class="title">
             <h1>Lets enjoy your trip with Holiday Hype</h1>
             <p>Thinking of taking break form your daily boring life and want to have a special quality time with your loved ones then</p>
-            <a class="button">Start Now -></a>
+            <a class="button" <a href="../Package/suggestionLocation.php" >Start Now -></a></a>
         </div>
         </div>
     </div>

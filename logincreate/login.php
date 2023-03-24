@@ -5,6 +5,9 @@ include ('../../Backend/config.php');
 <!DOCTYPE html>
 <html>
 <head>
+    <script type="text/javascript" src="../display/jquery.min.js"></script>
+    <script type="text/javascript" src="../display/toastr.min.js"></script>
+    <link href="../display/toastr.min.css" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="Login.css">
@@ -12,6 +15,15 @@ include ('../../Backend/config.php');
 	<title>Log in page</title>
 </head>
 <body>
+<?php
+    if (isset($_SESSION['error'])){
+        echo '<script>toastr.error("'.$_SESSION['error'].'");</script>';
+        unset($_SESSION['error']);
+    }
+
+
+
+?>
     <div class="container">
         <div class="form-box">
             <div class="logo">

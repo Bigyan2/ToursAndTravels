@@ -8,7 +8,6 @@
     <title>Customize</title>
     <style>
     
-
     </style>
 </head> 
 <h1 style="text-align: center;"  >Customize</h1>

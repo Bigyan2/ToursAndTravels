@@ -1,3 +1,4 @@
+<?php include "../../Backend/Class/user.Class.php"?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,23 +30,23 @@
             </div>
 
             <h1>Holiday Hype</h1>
-            <form  action ="../../Backend/signup.php" method="post">
+            <form  method="post">
                 <div class="input-group">
                     <div class="input-field">
                          
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="Name" name="name" required>
+                        <input type="text" placeholder="Name" name="name" required >
                     </div>
                     
 
                      <div class="input-field">
                         <i class="fa-solid fa-envelope"></i>
-                        <input type="email" placeholder="Email" name="email" required>
+                        <input type="email" placeholder="Email" name="email" required >
                     </div>
 
                     <div class="input-field">
                         <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Password" name="password" required>
+                        <input type="password" placeholder="Password" name="password" required >
                     </div>
 
                     <div class="input-field">
@@ -57,8 +58,6 @@
                         Sign Up</button>
                    
                     <p class="no_account">Already have a account : <a href="login.php">Login</a></p>
-
-
                     
                 </div>
             </form>
@@ -68,3 +67,36 @@
 	
 </body>
 </html>
+
+
+<?php   
+if (isset($_POST['submit'])){
+
+$username_pattern = "/^[a-zA-Z0-9]{4,20}$/";
+$email_pattern = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
+$password_pattern = "/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/";
+
+$username = $_POST["name"];
+$email = $_POST["email"];
+$password = $_POST["password"];
+$confirm_password = $_POST["confirm_password"];
+$h_password = password_hash($password, PASSWORD_DEFAULT);
+
+
+$_SESSION['username'] = $username;
+$_SESSION['email'] = $email;
+$_SESSION['password'] = $h_password;
+
+if (!preg_match($username_pattern, $username)){
+    echo '<script>toastr.error("Username should contain one uppercase and one number");</script>';
+} else if(!preg_match($email_pattern, $email)){
+    echo '<script>toastr.error("Invalid Email Format. Please try again!!!");</script>';
+} else if(!preg_match($password_pattern,$password)){
+    echo '<script>toastr.error("Invalid Password Format. Please try again!!!");</script>';
+} else if($password != $confirm_password){
+    echo '<script>toastr.error("Password doesnot matches. Please try again!!!");</script>';
+} else {
+    echo '<script>window.location.href = "../../Backend/signup.php"</script>';
+}
+}
+?>
