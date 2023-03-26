@@ -24,6 +24,7 @@
             unset($_SESSION['ok']);
         }
     ?>
+
     <div class="content" id="home"> 
         <nav>
             <img src ="./logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
@@ -48,37 +49,11 @@
                 </li>
             </ul>
         </nav>        
-        <div class="background">
-            <div class="title">
-                <h1>Lets enjoy your trip with Holiday Hype</h1>
-                <p><b>Thinking of taking break form your daily boring life and want to have a special quality time with your loved ones?</b></p>
-                <a class="button" href="../Package/suggestionLocation.php" ">Start Now ></a>
-            </div>
-        </div>
-    </div>
+       
 
-    <section class="container">
-        <div class="text">
-            <h2>Find the Travel Perfection</h2>
-        </div>
-        <div class="rowitems">
-            <div class="container-box">
-                <div class="container-image">
-                   <img src="./chat.png" alt="Chat">
-                </div>
-                <h4>Chat</h4>
-                <p>Have a conversation with travel agency</p>
-            </div>
 
-            <div class="container-box">
-                <div class="container-image">
-                    <img src="./rateus.jpg" alt="Rate Us">
-                </div>
-                <h4>Feedback</h4>
-                <p>Help us improve</p>
-            </div>
-        </div>
-    </section>
+
+
 
     <section class="footer">
         <div class="foot">
