@@ -20,19 +20,26 @@
 }
 
 .logo img{
-    width: 60px;
-    height: 60px;
-    margin: 17px 80px;
+    width: 50px;
+    height: 50px;
+    margin-left:80px;
+    margin-bottom: 15px;
+    margin-top: 15px;
     display: flex;
 }
 
 .nav_button{
    
-    text-align: left;
-    color: white;
-    font-size: 25px;
-    font-style: solid;
+    
+    color: rgb(0, 0, 0);
+    font-size: 18px;
     width: 100%;
+    border-radius: 4px;
+    font-weight: 500;   
+    text-decoration: none;
+    transition: ease 0.40s;
+    text-align: left;
+    margin-left: 15px;
 }
 
 .nav_button:hover{
@@ -47,18 +54,20 @@
     margin-right: 20px;
     padding: 14px 16px;
     float: left;
-    font-size: 25px;
+    font-size: 18px;
+    transition: ease 0.30s;
 }
 .nav_button a:hover{
     text-decoration: none;
-    color: rgb(2, 105, 105);
+    background-color: rgb(195, 235, 199);
     margin-left: 20px;
     margin-right: 20px;
-    background-color: #ddd;
+    box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
+    border-radius: 5px;
 }
 
 .nav_button a.active {
-    background-color: #2196F3;
+    background-color:purple;
     color: white;
   }
 
@@ -66,7 +75,7 @@
     text-align: right;
     max-width: 400px;
     background-color: rgba(255, 255, 255, 0.2);
-    width: 100%;
+    
     display: flex;
     align-items: center;
     border-radius: 60px;
@@ -77,11 +86,11 @@
     flex: 1;
     outline: none;
     color:black;
-    padding: 6px;
+    padding: 8px;
     border: none;
-    background-color: rgb(194, 194, 194);
- 
-    font-size: 20px;
+    width: 300px;
+    background-color: rgb(242, 239, 239);
+    font-size: 15px;
   }
 .search_box button {
     float: right;
@@ -103,8 +112,8 @@
     margin-right: 80px;
 }
 .profile i{
-    width: 70px;
-    font-size: 30px;
+    width: 40px;
+    font-size: 25px;
 }
 .profile i:hover{
   cursor: pointer;
@@ -214,7 +223,93 @@ h1{
      background-color: rgb(169, 9, 169) ;
  }
 
- 
+ .footer{
+    margin-top: 80px;
+    background-color: rgb(73, 21, 74);
+}
+
+.foot{
+    padding: 20px 0;
+}
+
+.footer-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.footlinks h4{
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.footlink_social h4{
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.footlinks ul li{
+    margin-bottom: 17px;
+    color: white;
+}
+
+
+.social a{
+    font-size: 25px;
+    margin: 4px;
+    height: 40px;
+    width: 40px;
+    color: rgb(21, 74, 74);
+    background-color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    transition: ease 0.30s;
+    text-decoration: none;
+}
+
+.social a:hover{
+    transform: scale(1.2);
+}
+
+.end{
+    text-align: center;
+    background-color: rgb(77, 51, 77);
+    padding-top: 7px;
+    padding-bottom: 10px;
+}
+
+.end p{
+    font-size: 15px;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+.footlinks a{
+    color:#fffefe;
+    text-decoration: none;
+}
+.footlinks li :hover{
+    text-decoration: underline ;
+    transform: scale(1.2);
+    transition: ease 0.30s;
+    color:#e1d4d4
+
+
+}
+.footlinks li :active{
+    color:#090909;
+}
 
 
     
