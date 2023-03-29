@@ -28,12 +28,12 @@
         <nav>
             <img src ="./logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
                  onclick="window.location.reload();">
-                 <li class="ho">
+                 <div class="ho">
                     <a class="home" href="">Home</a>
-                    <a class="package" href="#package">Packages</a>
+                    <a class="package" href="../Package/suggestionLocation.php">Packages</a>
                     <a class="booking" href="#booking">My Bookings</a>
                     <a class="hotel" href="#hotels">Hotels</a>
-                 </li>
+                 </div>
             
             <ul class="navbar">
                 <li>
