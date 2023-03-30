@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Package/style.css">
     <title>Customize</title>
     <style>
     </style>
@@ -14,28 +14,32 @@
 <body>
    <div class="content" id="home"> 
         <nav>
-            <img src ="icons/logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
+            <img src ="logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
                  onclick="window.location.reload();">
-                 <div class="ho">
-                    <a class="home" href="">Home</a>
-                    <a class="package" href="#package">Packages</a>
+                 <div class="ho vclass">
+                    <a class="home" href="index.php">Home</a>
+                    <a class="package" href="suggestionLocation.php">Packages</a>
                     <a class="booking" href="#booking">My Bookings</a>
                     <a class="hotel" href="#hotels">Hotels</a>
                  </div>
             
-            <ul class="navbar">
+            <ul class="navbar vclass">
                 <div>
                     <?php
                     if (isset($_SESSION['id'])){
-                        echo '<a class="signup-btn" <a href="../../Backend/logout.php">Log Out</a></a>';
+                        echo '<a class="signup-btn" <a href="Backend/logout.php">Log Out</a></a>';
                     } else {
-                        echo '<a class="signup-btn" <a href="../logincreate/SignUp.php">Sign Up</a></a>';
-                        echo '<a class="login-btn" <a href="../logincreate/login.php">Login</a></a>';
+                        echo '<a class="signup-btn" <a href="SignUp.php">Sign Up</a></a>';
+                        echo '<a class="login-btn" <a href="login.php">Login</a></a>';
                     }
                     ?>
                 </div>
             </ul>
-        </nav>       
+            <img src="ham.png" alt="hambeger" class="ham" >
+        </nav>  
+        
+        
+        
 <!-- <img  src="icons/logo.png" alt="logo" width="50px" height="50px" id="logo" > -->
 <!-- <h1>Customize</h1> -->
     <div class="container">

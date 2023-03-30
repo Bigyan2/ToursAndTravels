@@ -1,16 +1,16 @@
 <?php
-include ('../../Backend/config.php');
+include ('Backend/config.php');
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <script type="text/javascript" src="../display/jquery.min.js"></script>
-    <script type="text/javascript" src="../display/toastr.min.js"></script>
-    <link href="../display/toastr.min.css" rel="stylesheet">
+    <script type="text/javascript" src="display/jquery.min.js"></script>
+    <script type="text/javascript" src="display/toastr.min.js"></script>
+    <link href="display/toastr.min.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="Login.css">
+    <link rel="stylesheet" href="logincreate/Login.css">
     <script src="https://kit.fontawesome.com/97f454a94a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -30,10 +30,10 @@ include ('../../Backend/config.php');
               <img src="logo.png" alt="logo" />
             </div>
             <div class="nav_button">
-              <a  href="#Home">Home</a>
-              <a href="#Package">Package</a>
-              <a href="#Booking">Booking</a>
-              <a href="#Hotel">Hotel</a>
+              <a  href="index.php">Home</a>
+              <a href="suggestionLocation.php">Package</a>
+              <a href="#Booking">My Bookings</a>
+              <a href="#Hotel">Hotels</a>
             </div>
         </div>
         <div class="form-box">
@@ -42,7 +42,7 @@ include ('../../Backend/config.php');
 
             </div>
             <h1>Holiday Hype</h1>
-            <form action="../../Backend/login.php" method="post">
+            <form action="Backend/login.php" method="post">
                 <div class="input-group">
                     <div class="input-field">
 
@@ -64,7 +64,7 @@ include ('../../Backend/config.php');
                     <p>Or</p>
 
                     <button class="login_button" onclick="window.location = '<?php echo $login_url ?>'" type="button">
-                        <img src="google.png" alt="google">
+                        <img src="logincreate/google.png" alt="google">
                         Login with google
                     </button>
                     <p class="no_account">No account : <a href="SignUp.php">Sign Up</a></p>

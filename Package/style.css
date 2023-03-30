@@ -20,7 +20,7 @@ body
   width: 450px;
   height:500px ;
   background-color: #8ebbb9;
-  margin-left: 950px;
+  margin-left: 1050px;
   margin-top: 155px;
   border-radius: 25px;
   box-shadow: 3px 5px 15px;
@@ -90,13 +90,14 @@ img {
 }
 #submit
 {
+  
   width:150px ;
   height: 35px;
   position: absolute;
   left: 155px;
   top: 410px;
   border-radius: 9px;
-  background-color: #8e8dbe;
+  background-color: purple;
   color: white ;
   font-weight: solid black;
 }
@@ -107,13 +108,17 @@ img {
   cursor: pointer;
 }
 
-/* #profile
-{
-  position: absolute;
-  left: 450px;
-  bottom: 600px;
-  filter: drop-shadow(6px 6px 8px #62626f);
-} */
+/* nav bar */
+ .burger
+ {
+   width: 55px;
+   background-color: rgb(35, 35, 35);
+   height: 4px;
+   margin: 3px;
+position: absolute;
+left: 0px;
+top: 0px;
+ }
 
   nav{
     width: 100%;
@@ -130,13 +135,14 @@ img {
 
 nav .logo{
     width: 50px;
-    margin: 2vh;
-    margin-left: 3%;
+    margin-right:0.5%;
+    margin-left: 2%;
     margin-top: 1%;
 }
 
 .navbar{
-    margin-right: 3%;
+    margin-right: 2%;
+    width: 20%;
 }
 .navbar a{
     color: rgb(0, 0, 0);
@@ -149,6 +155,7 @@ nav .logo{
 }
 
 .ho{
+    width: 70%;
     margin-right: 30%;
     color: rgb(232, 215, 215);
     font-size: 18px;
@@ -165,7 +172,7 @@ nav .logo{
     color: rgb(0, 0, 0);
     border-radius: 30px;
     transition: ease 0.30s;
-    padding: 10px 22px;
+    padding: 10px 2%;
     text-decoration: none;
 }
 
@@ -174,7 +181,7 @@ nav .logo{
     color: rgb(0, 0, 0);
     border-radius: 30px;
     transition: ease 0.30s;
-    padding: 10px 22px;
+    padding: 10px 2%;
     text-decoration: none;
 }
 
@@ -183,7 +190,7 @@ nav .logo{
     color: rgb(0, 0, 0);
     border-radius: 30px;
     transition: ease 0.30s;
-    padding: 10px 22px;
+    padding: 10px 2%;
     text-decoration: none;
 }
 .ho .hotel{
@@ -191,7 +198,7 @@ nav .logo{
     color: rgb(0, 0, 0);
     border-radius: 30px;
     transition: ease 0.30s;
-    padding: 10px 22px;
+    padding: 10px 2%;
     text-decoration: none;
 }
 
@@ -244,59 +251,143 @@ nav .logo{
     background-image: url("res.jpg");
     background-size: cover;
     background-repeat:repeat;
+    margin: 0;
   }
   .container
   {
-  margin: auto;
+    margin-top: 8em;
+    margin-left: auto;
+    margin-right: auto;
   }
+  
   h1{
     left: 120px;
     
-  }
-  }
-
-
-  
-/* Media queries for responsive layout
-
-@media only screen and (max-width: 1200px) {
-  .container {
-    margin: 10px 20px 20px 50px;
-  }
+  }   
+}
+.ham
+{
+ position: absolute;
+ top: 0;
+ right: 1%;
+ width: 50px;
+ display: none;
 }
 
-@media only screen and (max-width: 768px) {
-  .container {
-    padding: 20px;
-  }
-  
-  .container #LName {
-    margin-left: 0;
-  }
-  
-  img {
-    margin: 10px;
-    width: 20px;
-    height: 20px;
-  }
-  
-  .container #logo {
-    width: 30px;
-    height: 30px;
-  }
-  
-  input[type="text"], input[type="date"], input[type="number"], input[type="submit"] {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  input[type="submit"] {
-    margin-top: 10px;
-  }
+@media only screen and (max-width: 774px)
+{
+
+.home .booking .hotel .booking
+{
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.ho
+{
+padding-top: 110px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+
+}
+.navbar
+_{
+  display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column; 
+}
+.ham{
+  display: block ;
+}
+.vclass {
+  opacity: 0;
+    
 }
 
-@media only screen and (max-width: 480px) {
-  h1 {
-    font-size: 2em;
+}
+
+
+  /* media queries */
+/* 
+  @media screen and (min-width: 1024px) {
+    .ho{
+      margin-right: 30%;
+      color: rgb(232, 215, 215);
+      font-size: 18px;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-weight: 500;   
+      text-decoration: none;
+      transition: ease 0.40s;
+      background-color: rgb(255, 255, 255)55, 255, 255);
+      width: 60vw;
+    }
+  
+    .ho .home{
+      display: inline-block;
+      color: rgb(0, 0, 0);
+      border-radius: 30px;
+      transition: ease 0.30s;
+      padding: 10px 22px;
+      text-decoration: none;
+    }
+  
+    .ho .package{
+      display: inline-block;
+      color: rgb(0, 0, 0);
+      border-radius: 30px;
+      transition: ease 0.30s;
+      padding: 10px 22px;
+      text-decoration: none;
+    }
+  
+    .ho .booking{
+      display: inline-block;
+      color: rgb(0, 0, 0);
+      border-radius: 30px;
+      transition: ease 0.30s;
+      padding: 10px 22px;
+      text-decoration: none;
+    }
+  
+    .ho .hotel{
+      display: inline-block;
+      color: rgb(0, 0, 0);
+      border-radius: 30px;
+      transition: ease 0.30s;
+      padding: 10px 22px;
+      text-decoration: none;
+    }
+  
+    .ho a:hover,.ho a.active{
+      background: rgb(195, 235, 199);
+      color: black;
+      box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
+      border-radius: 5px;
+    }
+  
+    .navbar .signup-btn {
+      display: inline-block;
+      color: rgb(255, 248, 248);
+      background-color: rgb(18, 18, 18);
+      border-radius: 30px;
+      transition: ease 0.30s;
+      padding: 10px 22px;
+      margin-right: 10px;
+    }
+  
+    .navbar .login-btn {
+      display: inline-block;
+      color: rgb(255, 248, 248);
+      background-color: rgb(18, 18, 18);
+      border-radius: 30px;
+      transition: ease 0.30s;
+      padding: 10
+    }
   }
-} */
+   
+ */
+
+

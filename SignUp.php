@@ -1,15 +1,14 @@
-<?php include "../../Backend/Class/user.Class.php";
-include ('../../Backend/config.php');
+<?php include ('Backend/config.php');
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <script type="text/javascript" src="../display/jquery.min.js"></script>
-    <script type="text/javascript" src="../display/toastr.min.js"></script>
-    <link href="../display/toastr.min.css" rel="stylesheet">
+    <script type="text/javascript" src="display/jquery.min.js"></script>
+    <script type="text/javascript" src="display/toastr.min.js"></script>
+    <link href="display/toastr.min.css" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="SignUP.css">
+    <link rel="stylesheet" href="logincreate/SignUP.css">
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <script src="https://kit.fontawesome.com/97f454a94a.js" crossorigin="anonymous"></script>
@@ -31,10 +30,10 @@ include ('../../Backend/config.php');
               <img src="logo.png" alt="logo" />
             </div>
             <div class="nav_button">
-              <a  href="#Home">Home</a>
-              <a href="#Package">Package</a>
-              <a href="#Booking">Booking</a>
-              <a href="#Hotel">Hotel</a>
+              <a  href="index.php">Home</a>
+              <a href="suggestionLocation.php">Package</a>
+              <a href="#Booking">My Bookings</a>
+              <a href="#Hotel">Hotels</a>
             </div>
             
            
@@ -70,13 +69,13 @@ include ('../../Backend/config.php');
                         <input type="password" placeholder="Confirm Password" name="confirm_password" required>
                     </div>
 
-                    <button class="login_button">
+                    <button class="login_button" name="submit">
                         Sign Up</button>
 
                         <p>Or</p>
 
                     <button class="login_button" onclick="window.location = '<?php echo $login_url ?>'" type="button">
-                        <img src="google.png" alt="google">
+                        <img src="logincreate/google.png" alt="google">
                         SignUp with google
                     </button>
                  
@@ -150,7 +149,7 @@ if (!preg_match($username_pattern, $username)){
     $_SESSION['username'] = $username;
     $_SESSION['email'] = $email;
     $_SESSION['password'] = $h_password;
-    echo '<script>window.location.href = "../../Backend/signup.php"</script>';
+    echo '<script>window.location.href = "Backend/signup.php"</script>';
 }
 }
 ?>
