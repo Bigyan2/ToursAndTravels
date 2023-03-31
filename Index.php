@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="text/javascript" src="display/jquery.min.js"></script>
-    <script type="text/javascript" src="display/toastr.min.js"></script>
-    <link href="display/toastr.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../display/jquery.min.js"></script>
+    <script type="text/javascript" src="../display/toastr.min.js"></script>
+    <link href="../display/toastr.min.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holiday Hype</title>
     <link rel="icon" href="./logo.png">
-    <link rel="stylesheet" type="text/css" href="LandingPage/Style.css">
+    <link rel="stylesheet" type="text/css" href="./Style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -28,21 +28,22 @@
         <nav>
             <img src ="./logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
                  onclick="window.location.reload();">
-                 <div class="ho">
-                    <a class="home" href="">Home</a>
-                    <a class="package" href="suggestionLocation.php">Packages</a>
-                    <a class="booking" href="#booking">My Bookings</a>
-                    <a class="hotel" href="#hotels">Hotels</a>
-                 </div>
+                 <li class="ho">
+                    <a class="home active" href="" id="home-link">Home</a>
+                    <a class="package" href="#package" id="package-link">Packages</a>
+                    <a class="booking" href="#booking" id="booking-link">My Bookings</a>
+                    <a class="hotel" href="#hotels" id="hotels-link">Hotels</a>
+
+                 </li>
             
             <ul class="navbar">
                 <li>
                     <?php
                     if (isset($_SESSION['id'])){
-                        echo '<a class="signup-btn" <a href="Backend/logout.php">Log Out</a></a>';
+                        echo '<a class="signup-btn" <a href="../../Backend/logout.php">Log Out</a></a>';
                     } else {
-                        echo '<a class="signup-btn" <a href="SignUp.php">Sign Up</a></a>';
-                        echo '<a class="login-btn" <a href="login.php">Login</a></a>';
+                        echo '<a class="signup-btn" <a href="../logincreate/SignUp.php">Sign Up</a></a>';
+                        echo '<a class="login-btn" <a href="../logincreate/login.php">Login</a></a>';
                     }
                     ?>
                 </li>
@@ -52,7 +53,7 @@
             <div class="title">
                 <h1>Lets enjoy your trip with Holiday Hype</h1>
                 <p><b>Thinking of taking break form your daily boring life and want to have a special quality time with your loved ones?</b></p>
-                <a class="button" href="./Package/suggestionLocation.php" >Start Now ></a>
+                <a class="button" href="../Package/suggestionLocation.php" ">Start Now ></a>
             </div>
         </div>
     </div>
@@ -64,7 +65,7 @@
         <div class="rowitems">
             <div class="container-box">
                 <div class="container-image">
-                   <img src="LandingPage/chat.png" alt="Chat">
+                   <img src="./chat.png" alt="Chat">
                 </div>
                 <h4>Chat</h4>
                 <p>Have a conversation with travel agency</p>
@@ -72,7 +73,7 @@
 
             <div class="container-box">
                 <div class="container-image">
-                    <img src="LandingPage/rateus.jpg" alt="Rate Us">
+                    <img src="./rateus.jpg" alt="Rate Us">
                 </div>
                 <h4>Feedback</h4>
                 <p>Help us improve</p>
