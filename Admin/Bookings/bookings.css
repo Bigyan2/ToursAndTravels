@@ -101,6 +101,27 @@ td {
   background-color: rgb(224, 222, 213);
 }
 
+i.fas.fa-times {
+  color: red;
+  margin-right: 5px;
+}
+
+i.fas.fa-times:hover {
+  color: red; 
+}
+
+i.fas.fa-check:hover {
+  color: greenyellow; 
+}
+
+i.fas.fa-check {
+  color: green; 
+}
+
+i.fas {
+  font-size: 1.4rem;
+}
+
 .container .header {
   position: fixed;
   top: 0;
@@ -114,6 +135,8 @@ td {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
+
+
 
 .container .header .nav .user {
   flex: 1;
@@ -130,8 +153,8 @@ td {
   background: #F4F4F6;
 }
 .container .content {
+  margin-top: 100px;
   position: relative;
-  margin-top: 10vh;
   min-height: 90vh;
   background: #F4F4F6;
 }
@@ -215,28 +238,6 @@ td {
 .add_package:active{
    background-color: rgb(9, 145, 169) ;
 }
-
-i.fas.fa-times {
-  color: #dc3545; 
-  margin-left: 5px;
-}
-
-i.fas.fa-times:hover {
-  color: red; 
-}
-
-i.fas.fa-check:hover {
-  color: greenyellow; 
-}
-
-i.fas.fa-check {
-  color: green; 
-}
-
-i.fas {
-  font-size: 1.4rem;
-}
-
 @media screen and (max-width: 1050px) {
   .Dassh li {
       font-size: 18px;

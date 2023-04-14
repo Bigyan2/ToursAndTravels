@@ -22,6 +22,9 @@ include ('Backend/config.php');
     if (isset($_SESSION['error'])){
         echo '<script>toastr.error("'.$_SESSION['error'].'");</script>';
         unset($_SESSION['error']);
+    } else if (isset($_SESSION['success'])){
+        echo '<script>toastr.success("'.$_SESSION['success'].'");</script>';
+        unset($_SESSION['success']);
     }
 ?>
     <div class="container">

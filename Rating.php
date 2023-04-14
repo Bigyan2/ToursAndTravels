@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holiday Hype</title>
     <link rel="icon" href="./logo.png">
-    <link rel="stylesheet" type="text/css" href="./RatingReview/Rating.css">
+    <link rel="stylesheet" type="text/css" href="RatingReview/Rating.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -17,20 +17,13 @@
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
-    <?php
-        session_start();
-        if (isset($_SESSION['ok'])){
-            echo '<script>toastr.success("'.$_SESSION['ok'].'");</script>';
-            unset($_SESSION['ok']);
-        }
-    ?>
     <div class="content" id="home"> 
         <nav>
             <img src ="./logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
                  onclick="window.location.reload();">
                  <li class="ho">
-                 <a class="home" href="">Home</a>
-                <a class="package" href="#package">Packages</a>
+                 <a class="home" href="index.php">Home</a>
+                <a class="package" href="suggestionLocation.php">Packages</a>
                 <a class="booking" href="#booking">My Bookings</a>
                 <a class="hotel" href="#hotels">Hotels</a>
 
@@ -39,11 +32,12 @@
             <ul class="navbar">
                 <li>
                     <?php
+                    session_start();
                     if (isset($_SESSION['id'])){
-                        echo '<a class="signup-btn" <a href="../../Backend/logout.php">Log Out</a></a>';
+                        echo '<a class="signup-btn" <a href="Backend/logout.php">Log Out</a></a>';
                     } else {
-                        echo '<a class="signup-btn" <a href="../logincreate/SignUp.php">Sign Up</a></a>';
-                        echo '<a class="login-btn" <a href="../logincreate/login.php">Login</a></a>';
+                        echo '<a class="signup-btn" <a href="SignUp.php">Sign Up</a></a>';
+                        echo '<a class="login-btn" <a href="login.php">Login</a></a>';
                     }
                     ?>
                 </li>

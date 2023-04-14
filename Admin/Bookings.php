@@ -11,7 +11,7 @@ if(!isset($_SESSION['id'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Dashboard/dash.css">
+    <link rel="stylesheet" href="Bookings/bookings.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Admin Panel</title>
 </head>
@@ -26,10 +26,10 @@ if(!isset($_SESSION['id'])){
     <div class="Dassh">
         <div class="hype">  
             <img src ="../logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
-            onclick="window.location.reload()">
+            onclick="window.location.reload();">
         </div>
         <ul>
-            <li><a href="dashboard.php">Dashboard</a> </li>
+            <li><a href="dashboard.php"><span>Dashboard</a> </li>
         </ul>
         <ul>
           <li><a href="Package.php">Package</a> </li>
@@ -51,44 +51,15 @@ if(!isset($_SESSION['id'])){
         <div class="header">
             <div class="nav">
                 <div class="user">
-                    <a > Admin Dashboard</a>
+                    <a>Bookings</a>
                 </div>
             </div>
         </div>
         <div class="content">
-            <div class="cards">
-                <div class="card">
-                    <div class="box">
-                        <h1><?php echo getUserCount();?></h1>
-                        <h3>Total User</h3>
-                    </div>
-                    <div class="icon-case">
-                        <img src="user.png" alt="">
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <h1><?php echo getBookingCount();?></h1>
-                        <h3>Total Bookings</h3>
-                    </div>
-                    <div class="icon-case">
-                        <img src="booking.png" alt="">
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="box">
-                        <h1><?php echo getPackageCount();?></h1>
-                        <h3>Total Packages</h3>
-                    </div>
-                    <div class="icon-case">
-                        <img src="package.png" alt="">
-                    </div>
-                </div>
-            </div>
             <div class="content-2">
                 <div class="pack">
                     <div class="title">
-                        <h2>All Customized Packages</h2>
+                        <h2>All Bookings</h2>
                         <div class="search_box">
                             <input type="text" placeholder="Search.." id="find" onkeyup="search()"> 
                         </div>
@@ -96,31 +67,21 @@ if(!isset($_SESSION['id'])){
 
                     <table id="packageTable">
                         <tr>
-                            <th>Customized by</th>
-                            <th>From</th>
-                            <th>To</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
-                            <th>Children Number</th>
-                            <th>Adult Number</th>
+                            <th>Booked By</th>
+                            <th>Package Name</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
                         <?php 
                           require_once "../Backend/getData.php";
-                          $result = fetchCustomPacakge();
+                          $result = fetchBookings();
                           while($row=mysqli_fetch_assoc($result)){
                             echo "<tr>";
                               echo "<td>".$row['Username']."</td>";
-                              echo "<td>".$row['FromLocation']."</td>";
-                              echo "<td>".$row['ToLocation']."</td>";
-                              echo "<td>".$row['StartDate']."</td>";
-                              echo "<td>".$row['EndDate']."</td>";
-                              echo "<td>".$row['ChildrenNumber']."</td>";
-                              echo "<td>".$row['AdultNumber']."</td>";
-                              echo "<td>".$row['Status']."</td>";
-                              echo "<td><a href='../Backend/Approve/approvePackage.php?id=".$row['CustomId']."&approve=yes'><i class='fas fa-check'></i></a>";
-                              echo "<a href='../Backend/Approve/approvePackage.php?id=".$row['CustomId']."&approve=no'><i class='fas fa-times'></i></a>";
+                              echo "<td>".$row['PackageName']."</td>";
+                              echo "<td>".$row['status']."</td>";
+                              echo "<td><a href='../Backend/Approve/approveBooking.php?id=".$row['BookingsId']."&approve=yes'><i class='fas fa-check'></i></a>";
+                              echo "<a href='../Backend/Approve/approveBooking.php?id=".$row['BookingsId']."&approve=no'><i class='fas fa-times'></i></a>";
                             echo "</tr>";     
                           } 
                       ?>

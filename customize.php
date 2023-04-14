@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
     <link rel="stylesheet" href="Package/style.css">
     <title>Customize</title>
     <style>
@@ -12,7 +11,7 @@
     
 </head> 
 <body>
-   <div class="content" id="home"> 
+   <div class="container" id="home"> 
         <nav>
             <img src ="logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
                  onclick="window.location.reload();">
@@ -26,6 +25,7 @@
             <ul class="navbar vclass">
                 <div>
                     <?php
+                    session_start();
                     if (isset($_SESSION['id'])){
                         echo '<a class="signup-btn" <a href="Backend/logout.php">Log Out</a></a>';
                     } else {
@@ -35,59 +35,76 @@
                     ?>
                 </div>
             </ul>
-            <img src="ham.png" alt="hambeger" class="ham" >
+            <img src="Package/ham.png" alt="hambeger" class="burger" >
         </nav>  
         
-        
-        
-<!-- <img  src="icons/logo.png" alt="logo" width="50px" height="50px" id="logo" > -->
-<!-- <h1>Customize</h1> -->
-    <div class="container">
-        <!-- <img  src="icons/logo.png" alt="logo" width="50px" height="50px" id="logo" > -->
-
-    <!-- <img  src="icons/user.png" alt="notification" width="25px" height="25px"  id="profile"  > -->
-    <!-- <img  src="icons/notification.png" alt="notification" width="25px" height="25px"  id="notification"  > -->
     
+    <form method="post">
     <br>
     <p >
         Trip From : <br>
-         <input type="text" name="TFrom" style="height: 25px; " > 
+         <input type="text" name="TFrom" style="height: 25px; " required> 
 
             <div id="Trip_To" >
 
                 Trip To : <br>
-                     <input type="text" style="height: 25px; "   ></p>
+                     <input type="text" name="TripTo" style="height: 25px; " required></p>
                     </div>
     </p>
    <div id="DateFrom">
     <p> Date from:
         <br>
-         <input type="text" style="height: 25px; "  placeholder="Departure Date" id="date" onfocus="(this.type='date')"></p>
+         <input type="text" style="height: 25px; "  placeholder="Departure Date" id="date" onfocus="(this.type='date')" name="DateFrom"  required></p>
     </div>
 
     <div id="DateTo">
    
         <p ></p>Date To : <br>
-                     <input type="text" style="height: 25px; "  placeholder="Return Date" id="date" onfocus="(this.type='date')"  ></p>
+                     <input type="text" style="height: 25px; "  placeholder="Return Date" id="date" onfocus="(this.type='date')"  name="DateTo" required></p>
     </div>
     
     <p >Guest : <br>
-           <input type="number" id="guest" placeholder="Adult" style="height: 25px; "  ></p>
+           <input type="number" id="guest" placeholder="Adult" style="height: 25px; "  name="adult" required></p>
            
     <div id="Guest" >
     <p ></p> 
-         <input type="number" placeholder="Children"  style="height: 25px; " ></p>
+         <input type="number" placeholder="Children"  style="height: 25px; " name="children" required></p>
         </div>
     
     <p> Email : <br>
-        <input type="email" id="Email" style="height: 25px; " > </p>
+        <input type="email" id="Email" style="height: 25px; " name="email" required> </p>
     <div id="Phone">
         Phone Number: <br>
-        <input type="number" style="height: 25px; "  >
+        <input type="number" style="height: 25px; "  name="phone" required>
        </div>
     
-    <input type="submit" value="Customize" id="submit">
-    
+    <input type="submit" value="Customize" id="submit" name="submit" required>
+    </form>
 </div>
+
+<script src="Package/resp.js"></script>
 </body>
 </html>
+
+<?php
+include "Backend/addData.php";
+
+if (isset($_SESSION['id'])){
+    if (isset($_POST['submit'])){
+        $fromLocation = $_POST['TFrom'];
+        $toLocation = $_POST['TripTo'];
+        $DateFrom = $_POST['DateFrom'];
+        $DateTo = $_POST['DateTo'];
+        $email = $_POST['email'];
+        $children = $_POST['children'];
+        $adult = $_POST['adult'];
+        $phone = $_POST['phone'];
+
+        addCustomPackages($fromLocation,$toLocation,$DateFrom,$DateTo,$email,$children,$adult,$phone);
+    }
+} else {
+    $_SESSION['error'] = "Please Login First";
+    echo '<script>window.location.href = "Login.php"</script>';
+}
+
+?>
