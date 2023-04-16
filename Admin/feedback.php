@@ -7,11 +7,12 @@ if(!isset($_SESSION['id'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="confirm.js"></script>
     <script src="../display/sweetalert.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Hotel/feedback.css">
+    <link rel="stylesheet" href="Dashboard/feedback.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Admin Panel</title>
 </head>
@@ -27,24 +28,25 @@ if(!isset($_SESSION['id'])){
         <div class="hype">  
             <img src ="../logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
             onclick="window.location.reload();">
+            <span>Holiday Hype</span>
         </div>
         <ul>
-            <li><a href="dashboard.php"><span>Dashboard</a> </li>
+            <li><a href="dashboard.php"><img src="img/dashboard.png">Dashboard</a></li>
         </ul>
         <ul>
-          <li><a href="Package.php">Package</a> </li>
+          <li><a href="Package.php"><img src="img/package.png">Package</a> </li>
         </ul>
         <ul>
-          <li><a href="feedback.php">Feedback</a> </li>
+          <li><a href="feedback.php" class="active"><img src="img/feedback.png">Feedback</a></li>
         </ul>
         <ul>
-          <li><a href="Bookings.php">Bookings</a> </li>
+          <li><a href="Bookings.php"><img src="img/bookings.png">Bookings</a> </li>
         </ul>
         <ul>
-          <li><a href="hotel.php">Hotel</a> </li>
+          <li><a href="hotel.php"><img src="img/hotel.png">Hotel</a> </li>
         </ul>
         <ul>
-          <li><a href="../Backend/logout.php">Logout</a> </li>
+          <li><a onclick="toLogout()"><img src="img/logout.png">Logout</a> </li>
         </ul>
     </div>
     <div class="container">
@@ -80,8 +82,9 @@ if(!isset($_SESSION['id'])){
                               echo "<td>".$row['Username']."</td>";
                               echo "<td>".$row['Feedback']."</td>";
                               echo "<td>".$row['status']."</td>";
-                              echo "<td><a href='../Backend/Approve/approveFeedback.php?id=".$row['FeedbackId']."&approve=yes'><i class='fas fa-check'></i></a>";
-                              echo "<a href='../Backend/Approve/approveFeedback.php?id=".$row['FeedbackId']."&approve=no'><i class='fas fa-times'></i></a>";
+                              $id = $row['FeedbackId'];
+                              echo "<td><a onClick=\"forAction('You want to approve the Feedback','../Backend/Approve/approveFeedback.php?id=" . $id . "&approve=yes')\"><i class='fas fa-check'></i></a>";
+                              echo "<a onClick=\"forAction('You want to reject the Feedback','../Backend/Approve/approveFeedback.php?id=" . $id . "&approve=no')\"><i class='fas fa-times'></i></a></td>";
                             echo "</tr>";     
                           } 
                       ?>

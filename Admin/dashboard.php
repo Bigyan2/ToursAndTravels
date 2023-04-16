@@ -8,6 +8,7 @@ if(!isset($_SESSION['id'])){
 <html lang="en">
 <head>
     <script src="../display/sweetalert.min.js"></script>
+    <script src="confirm.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,28 +24,29 @@ if(!isset($_SESSION['id'])){
       unset($_SESSION['mssg']);
     }
   ?>
-    <div class="Dassh">
+   <div class="Dassh">
         <div class="hype">  
             <img src ="../logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
-            onclick="window.location.reload()">
+            onclick="window.location.reload();">
+            <span>Holiday Hype</span>
         </div>
         <ul>
-            <li><a href="dashboard.php">Dashboard</a> </li>
+            <li><a href="dashboard.php"><img src="img/dashboard.png">Dashboard</a></li>
         </ul>
         <ul>
-          <li><a href="Package.php">Package</a> </li>
+          <li><a href="Package.php"><img src="img/package.png">Package</a> </li>
         </ul>
         <ul>
-          <li><a href="feedback.php">Feedback</a> </li>
+          <li><a href="feedback.php" class="active"><img src="img/feedback.png">Feedback</a></li>
         </ul>
         <ul>
-          <li><a href="Bookings.php">Bookings</a> </li>
+          <li><a href="Bookings.php"><img src="img/bookings.png">Bookings</a> </li>
         </ul>
         <ul>
-          <li><a href="hotel.php">Hotel</a> </li>
+          <li><a href="hotel.php"><img src="img/hotel.png">Hotel</a> </li>
         </ul>
         <ul>
-          <li><a href="../Backend/logout.php">Logout</a> </li>
+          <li><a onclick="toLogout()"><img src="img/logout.png">Logout</a> </li>
         </ul>
     </div>
     <div class="container">
@@ -119,8 +121,9 @@ if(!isset($_SESSION['id'])){
                               echo "<td>".$row['ChildrenNumber']."</td>";
                               echo "<td>".$row['AdultNumber']."</td>";
                               echo "<td>".$row['Status']."</td>";
-                              echo "<td><a href='../Backend/Approve/approvePackage.php?id=".$row['CustomId']."&approve=yes'><i class='fas fa-check'></i></a>";
-                              echo "<a href='../Backend/Approve/approvePackage.php?id=".$row['CustomId']."&approve=no'><i class='fas fa-times'></i></a>";
+                              $id = $row['CustomId'];
+                               echo "<td><a onClick=\"forAction('You want to approve the Customized Booking','../Backend/Approve/approveBooking.php?id=" . $id . "&approve=yes')\"><i class='fas fa-check'></i></a>";
+                              echo "<a onClick=\"forAction('You want to reject the Customized Booking','../Backend/Approve/approveBooking.php?id=" . $id . "&approve=no')\"><i class='fas fa-times'></i></a></td>";
                             echo "</tr>";     
                           } 
                       ?>

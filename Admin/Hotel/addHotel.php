@@ -11,7 +11,7 @@ if(!isset($_SESSION['id'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="packageAdd.css">
+    <link rel="stylesheet" href="hotelAdd.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Admin Panel</title>
 </head>
@@ -48,7 +48,7 @@ if(!isset($_SESSION['id'])){
         <div class="header">
             <div class="nav">
                 <div class="user">
-                    <a>Add Packages</a>
+                    <a>Add Hotels</a>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@ if(!isset($_SESSION['id'])){
           <input type="text" id="location" name="location" required>
 
           <label for="image-link">Image Link:</label>
-          <input type="text" id="image-link" name="image-link" required>
+          <input type="file" id="image-link" name="image-link" required>
 
           <label for="rating">Rating:</label>
           <input type="number" id="rating" name="rating" required>

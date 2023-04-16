@@ -7,6 +7,7 @@ if(!isset($_SESSION['id'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="confirm.js"></script>
     <script src="../display/sweetalert.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,28 +24,29 @@ if(!isset($_SESSION['id'])){
       unset($_SESSION['mssg']);
     }
   ?>
-    <div class="Dassh">
+  <div class="Dassh">
         <div class="hype">  
             <img src ="../logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
-            onclick="window.location.reload()">
+            onclick="window.location.reload();">
+            <span>Holiday Hype</span>
         </div>
         <ul>
-            <li><a href="dashboard.php">Dashboard</a> </li>
+            <li><a href="dashboard.php"><img src="img/dashboard.png">Dashboard</a></li>
         </ul>
         <ul>
-          <li><a href="Package.php">Package</a> </li>
+          <li><a href="Package.php"><img src="img/package.png">Package</a> </li>
         </ul>
         <ul>
-          <li><a href="feedback.php">Feedback</a> </li>
+          <li><a href="feedback.php" class="active"><img src="img/feedback.png">Feedback</a></li>
         </ul>
         <ul>
-          <li><a href="Bookings.php">Bookings</a> </li>
+          <li><a href="Bookings.php"><img src="img/bookings.png">Bookings</a> </li>
         </ul>
         <ul>
-          <li><a href="hotel.php">Hotel</a> </li>
+          <li><a href="hotel.php"><img src="img/hotel.png">Hotel</a> </li>
         </ul>
         <ul>
-          <li><a href="../Backend/logout.php">Logout</a> </li>
+          <li><a onclick="toLogout()"><img src="img/logout.png">Logout</a> </li>
         </ul>
     </div>
     <div class="container">
@@ -85,8 +87,9 @@ if(!isset($_SESSION['id'])){
                               echo "<td>".$row['LocationName']."</td>";
                               echo "<td>".$row['Price']."</td>";
                               echo "<td>".$row['Difficulty']."</td>";
-                              echo "<td><a href='./Package/updatePackage.php?id=".$row['Package_id']."'><i class='fas fa-pencil-alt'></i></a>";
-                              echo "<a href='../Backend/Package/delete.php?id=".$row['Package_id']."'><i class='fas fa-trash-alt'></i></a>";
+                              $id = $row['Package_id'];
+                              echo "<td><a href='./Package/updatePackage.php?id=".$id."'><i class='fas fa-pencil-alt'></i></a>";
+                              echo "<a onClick=\"forAction('You want to delete the Package','../Backend/Package/delete.php?id=" . $id . "')\"><i class='fas fa-trash-alt'></i></a>";
                             echo "</tr>";     
                           } 
                       ?>

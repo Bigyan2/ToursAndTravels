@@ -103,7 +103,6 @@ td {
 
 .Dassh ul:last-child{
   position: absolute;
-  bottom: 0;
   width: 100%;
   padding-bottom: 2px;
 }
@@ -114,13 +113,13 @@ td {
   height: 60px;
   margin-top: 10px;
 }
-  
-.Dassh ul li a:hover {
-  color: red;
-}
 
 .Dassh li:hover {
   background-color: rgb(224, 222, 213);
+}
+  
+.Dassh ul li a:hover {
+  color: red;
 }
 
 li img{
@@ -130,25 +129,32 @@ li img{
   vertical-align: middle;
 }
 
-i.fas.fa-times {
-  color: red;
-  margin-right: 5px;
+i.fas.fa-trash-alt {
+  color: #dc3545; 
+  margin-left: 5px;
 }
 
-i.fas.fa-times:hover {
+i.fas.fa-trash-alt:hover {
   color: red; 
 }
 
-i.fas.fa-check:hover {
-  color: greenyellow; 
+i.fas.fa-pencil-alt:hover {
+  color: blue; 
 }
 
-i.fas.fa-check {
-  color: green; 
+i.fas.fa-pencil-alt {
+  color: #007bff; 
 }
 
 i.fas {
   font-size: 1.4rem;
+}
+
+.Dassh ul:last-child{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 10px;
 }
 
 .container .header {
@@ -182,8 +188,8 @@ i.fas {
   background: #F4F4F6;
 }
 .container .content {
-  margin-top: 100px;
   position: relative;
+  margin-top: 100px;
   min-height: 90vh;
   background: #F4F4F6;
 }
@@ -231,7 +237,6 @@ i.fas {
 }
 
 .search_box{
-  margin-right: 10px;
   text-align: right;
   width: 20px;
   background-color: rgba(255, 255, 255, 0.2);
@@ -268,8 +273,6 @@ i.fas {
 .add_package:active{
    background-color: rgb(9, 145, 169) ;
 }
-
-
 @media screen and (max-width: 1050px) {
   .Dassh li {
       font-size: 18px;

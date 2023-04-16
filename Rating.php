@@ -37,7 +37,7 @@
                         echo '<a class="signup-btn" <a href="Backend/logout.php">Log Out</a></a>';
                     } else {
                         echo '<a class="signup-btn" <a href="SignUp.php">Sign Up</a></a>';
-                        echo '<a class="login-btn" <a href="login.php">Login</a></a>';
+                        echo '<a class="login-btn" <a href="Login.php">Login</a></a>';
                     }
                     ?>
                 </li>

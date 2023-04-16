@@ -100,7 +100,7 @@ if (isset($_SESSION['id'])){
         $adult = $_POST['adult'];
         $phone = $_POST['phone'];
 
-        addCustomPackages($fromLocation,$toLocation,$DateFrom,$DateTo,$email,$children,$adult,$phone);
+        addCustomPackages($fromLocation,$toLocation,$DateFrom,$DateTo,$email,$children,$adult,$phone,$_SESSION['id']);
     }
 } else {
     $_SESSION['error'] = "Please Login First";

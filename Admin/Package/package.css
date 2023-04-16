@@ -13,11 +13,6 @@ a {
 li {
   list-style: none;
 }
-.hype .logo{
-  width: 50px;
-  margin: 2vh;
-  margin-left: 30%;
-}
 .user a{
   font-weight: bold;
   color:#45174e
@@ -81,24 +76,58 @@ td {
 }
 .Dassh li {
   width: 13vw;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   background-color: transparent;
   margin-bottom: 12px;
-  padding: 10px 40px;
+  padding: 12px 15px;
   margin-left: 20px;
   color: black;
   border-radius: 9px;
   display: flex;
   align-items: center;
 }
-.Dassh li:hover {
-  color: #631371;
+
+.Dassh .hype {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+} 
+
+.Dassh .hype span{
+  color : #631371;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+.Dassh ul:last-child{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 2px;
+}
+
+.hype img {
+  margin-bottom: 10px; 
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+}
+
+.Dassh ul li:hover {
   background-color: rgb(224, 222, 213);
 }
-.Dassh li:hover li:active {
-  color: #631371;
-  background-color: rgb(224, 222, 213);
+
+.Dassh ul li a:hover {
+  color: red;
+}
+
+li img{
+  height: 30px;
+  width:  30px;
+  margin-right: 8px;
+  vertical-align: middle;
 }
 
 i.fas.fa-trash-alt {
