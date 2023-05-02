@@ -103,6 +103,7 @@ nav .logo{
     background: #F4F4F6;
     width: 15.6vw;
     border-radius: 10px;
+    position: relative;
     margin-right: 15vw;
     min-height: 60vh;
     margin-top: 100px;
@@ -148,12 +149,89 @@ nav .logo{
     vertical-align: middle;
   }  
 
+  .container .header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 83.2vw;
+    height: 8vh;
+    background: #F4F4F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .container img{
+    height: 30px;
+    width:  30px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }  
+  
+  .container .header .nav .user {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+  }
+  .container {
+    position: absolute;
+    right: 0;
+    width: 82.2vw;
+    height: 100vh;
+    background: #F4F4F6;
+  }
+  .container .content {
+    position: relative;
+    margin-top: 5px;
+    background: #F4F4F6;
+  }
+
+  .container .content .card {
+    width: 1050px;
+    height: 450px;
+    border-radius: 15px;
+    background: rgb(224, 222, 213);
+    box-shadow: 8px 15px 40px rgba(11, 11, 11, 0.4);
+    margin: 20px 70px;
+    display: flex;
+  }
+  .container .content .card form{
+    width:100px;
+    height: 300px;
+    margin-top: 40px;
+    margin-left: -100px;
+
+  }
+ 
+  
+  .button {
+    display: inline-block;
+    margin-top: 2px;
+    font-size: 19px;
+    padding: 7px 21px;
+    color:  rgb(210, 75, 75);
+    background-color: transparent;
+    border-radius: 10px;
+    transition: ease 0.30s;
+  }
+
+  .button:hover {
+    transform: scale(1.1);
+    color: white;
+    background-color: rgb(210, 75, 75);
+    box-shadow: 5px 10px 30px rgba(11, 11, 11, 0.4);
+    padding: 7px 21px;
+  }
+
 
 .footer{
     margin-top: 80px;
     background-color: rgb(73, 21, 74);
-    position: sticky;
-    
+    position:sticky;
     width: 100%;
     
 }
