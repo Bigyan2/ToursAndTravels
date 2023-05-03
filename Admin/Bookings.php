@@ -70,6 +70,7 @@ if(!isset($_SESSION['id'])){
                         <tr>
                             <th>Booked By</th>
                             <th>Package Name</th>
+                            <th>Booked Date</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -80,6 +81,7 @@ if(!isset($_SESSION['id'])){
                             echo "<tr>";
                               echo "<td>".$row['Username']."</td>";
                               echo "<td>".$row['PackageName']."</td>";
+                              echo "<td>".$row['BookedDate']."</td>";
                               echo "<td>".$row['status']."</td>";
                               $id = $row['BookingsId'];
                               echo "<td><a onClick=\"forAction('You want to approve the Booking','../Backend/Approve/approveBooking.php?id=" . $id . "&approve=yes')\"><i class='fas fa-check'></i></a>";

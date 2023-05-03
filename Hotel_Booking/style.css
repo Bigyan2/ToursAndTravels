@@ -1,13 +1,16 @@
-*{
-    padding:0;
-    margin:0;
-    box-sizing:border;
+body {
     font-family:Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    list-style: none;
-    scroll-behavior: smooth;
+	margin: 0;
+	padding: 0;
+	background-color:hsla(0, 0%, 100%, 0.95);
+    color: #f6f6f6;
 }
 
+*{
+    text-decoration: none;
+}
+
+/* nav bar */
 nav{
     width: 100%;
     height: 60px;
@@ -119,113 +122,132 @@ nav{
     padding: 10px 30px;
   }
 
-.background{
-    position: relative;
-   
-    background-size: 100%;
-    background-image:linear-gradient(rgba(0,0,50,0.8),rgba(0,0,50,0.5)),url("https://source.unsplash.com/1920x1080/?nature");
-}
 
-.title {
-    text-decoration: none;
-    text-shadow:20px 10px 30px #fffefe;
-    font-size: 4vh;
-    color: rgb(0, 0, 0);
-    padding: 190px 1px;
-    margin-top: 10vh;
-    text-align: center;
-    vertical-align: center;
-  }
-  
-  .title h1 {
-    font-size: 10vh;
-    transition: ease 0.3s;
-    padding-bottom: 10px;
-  }
-  
-  .title h1:hover {
-    color: rgb(0, 0, 0);
-    -webkit-text-stroke: 1px rgb(26, 25, 25);
-  }
-  
-  .button {
-    display: inline-block;
-    margin-top: 5vh;
+.profile{
+    text-align:right;
+    margin-right: 80px;
+}
+.profile i{
+    width: 40px;
     font-size: 25px;
-    padding: 10px 30px;
-    color: rgb(255, 255, 255);
-    background-color: transparent;
-    border-radius: 20px;
-    transition: ease 0.30s;
-  }
-  
-  .button:hover {
-    transform: scale(1.1);
-    color: white;
-    background-color: rgb(9, 233, 84);
-    box-shadow: 5px 10px 30px rgba(11, 11, 11, 0.4);
-    padding: 10px 30px;
-  }
-  
-  .text h2 {
-    font-size: 40px;
-    font-weight: 650;
-    margin-top: 40px;
-    margin-bottom: 10px;
-    line-height: 2;
-    text-align: center;
-  }
-  
-
-.rowitems{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(100px,auto));
-    gap: 25px;
-    align-items: center;
-    text-align: center;
-    margin-top: 20px;
-    margin-left: 30px ;
-    margin-right: 30px;
-    margin-bottom:10px ;
 }
+.profile i:hover{
+  cursor: pointer;
+}   
 
 
-.container-box{
-    border: 1px solid #d3d3d3;
-    border-radius: 5px;
-    padding: 50px 10px;
-    transition: all 0.7s ease 0s;
-    cursor: pointer;
+
+/* my booking */
+
+h2{
+    /* font-weight: rgb(38, 37, 37); */
+    /* color: #315b7b; */
+    text-shadow: 6px 2px 4px rgb(216, 233, 233);
+		/* background-color: #dc49dc; */
+		color: #121212;
+		padding: 10px;
+        text-align: center;
+        font-size: 40px;
+        
+		}
+h3{
+    color: rgb(15, 15, 15);
+    font-weight: bolder;
+    font-size:28px;
 }
-
-.container-image img{
-    height: 200px;
-    width: 200px;
-    padding: 5px;
-    margin-bottom: 15px;
-}
-
-.container-box h4{
+p{
+    color: rgb(15, 15, 15);
     font-size: 20px;
-    margin-bottom: 5px;
-    font-weight: 550;
 }
 
-.container-box p{
-    font-size: 16px;
-    color: #565353;
+section {
+	background-color: #e8fffe;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	margin-top: 60px;
+    margin-left: 80px;
+    margin-right: 80px;
+	padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(65, 62, 62);
+
 }
 
-.container-box:hover{
-    transform: translateX(3px);
-    box-shadow: 5px 20px 50px rgba(78, 78, 78, 0.1);
-    border: 1px solid transparent;
-    border-radius: 0px;
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	border-bottom: 1px solid #dddddd;
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+li:last-child {
+	border-bottom: none;
+}
+
+.date {
+	font-size: 14px;
+	color: #aaaaaa;
+}
+
+.destination {
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.status {
+	font-size: 14px;
+	padding: 10px 10px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	font-weight: bold;
+    
+}
+
+.status {
+	font-size: 18px;
+	padding: 9px 16px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.status--pending {
+	color: #ff9900;
+	background-color: #ffe2b8;
+    margin-right: 60px;
+}
+
+.status--approved {
+	color: #008000;
+	background-color: #ffe2b8;
+    margin-right: 60px;  
+}
+
+.status--rejected {
+	color: red;
+	background-color: #ffe2b8;
+    margin-right: 60px;  
+}
+
+
+hr{
+   height: 1px;
+}
+.Booking-inner
+{
+    margin-left: 60px;
 }
 
 .footer{
     margin-top: 80px;
     background-color: rgb(73, 21, 74);
+    width: 100%;
 }
 
 .foot{
@@ -275,6 +297,7 @@ nav{
     align-items: center;
     border-radius: 20px;
     transition: ease 0.30s;
+    text-decoration: none;
 }
 
 .social a:hover{
@@ -296,6 +319,7 @@ nav{
 }
 .footlinks a{
     color:#fffefe;
+    text-decoration: none;
 }
 .footlinks li :hover{
     text-decoration: underline ;
@@ -309,16 +333,96 @@ nav{
     color:#090909;
 }
 
-.profile{
-  text-align:right;
-  margin-right: 80px;
+
+/* ADDED */
+
+@media (max-width:1125px)
+{
+    .logo img{
+        width: 50px;
+        height: 50px;
+        margin-left:40px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        display: flex;
+    }
+    .nav_button{
+   
+    
+        color: rgb(0, 0, 0);
+        font-size: 18px;
+        border-radius: 4px;
+        font-weight: 500;   
+        text-decoration: none;
+        transition: ease 0.40s;
+        text-align: left;
+        margin-left: 0px;
+    }
+    .profile{
+        text-align:right;
+        margin-right: 30px;
+    }
+    .search_box input[type=text] {
+        padding: 8px;
+        width: 200px;
+       font-size: 15px;
+      }
 }
 
-.profile i{
-  width: 40px;
-  font-size: 1.5em;
+
+@media (max-width:919px)
+{
+    .search_box input[type=text] {
+        padding: 8px;
+        width: 100px;
+       font-size: 15px;
+      }
+}
+@media (max-width:919px)
+{
+    .nav_button a{
+        text-decoration: none;
+        color: black;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 14px 5px;
+        
+    }
 }
 
-.profile i:hover{
-  cursor: pointer;
-}  
+@media (max-width:1015px)
+{
+    .location i{
+        
+        grid-template-columns: 5px 6fr;
+        font-size: 15px;
+        margin-right: 15px;
+    
+    }
+}
+@media (max-width:929px)
+{
+    .location i{
+        
+        grid-template-columns: 5px 6fr;
+        font-size: 10px;
+        margin-right: 10px;  
+    }
+    .location h3 {
+        font-size: 22px;
+        text-align: left;
+        width: 100%;
+        margin-left: 7px;
+            }
+        
+            
+        /* price  */
+        .location_name p {
+            margin-left: 3px;
+            margin-right: 0px;
+        }
+        
+        .location_price p {
+            font-size: 8px;
+        }
+}

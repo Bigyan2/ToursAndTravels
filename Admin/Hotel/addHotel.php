@@ -53,38 +53,22 @@ if(!isset($_SESSION['id'])){
             </div>
         </div>
     <div class="content">
-      <form method="POST" action="../../Backend/Package/add.php">
-          <label for="package-name">Package Name:</label>
-          <input type="text" id="package-name" name="package-name" required>
-
-          <label for="total-days">Total Days:</label>
-          <input type="number" id="total-days" name="total-days" required> 
+      <form method="POST" action="../../Backend/Hotel/add.php">
+          <label for="hotel-name">Hotel Name:</label>
+          <input type="text" id="hotel-name" name="hotel-name" required>
 
           <label for="location">Location:</label>
           <input type="text" id="location" name="location" required>
 
           <label for="image-link">Image Link:</label>
-          <input type="file" id="image-link" name="image-link" required>
+          <input type="text" id="image-link" name="image-link" required>
 
-          <label for="rating">Rating:</label>
-          <input type="number" id="rating" name="rating" required>
+          <label for="hotel-price">Price:</label>
+          <input type="number" id="hotel-price" name="hotel-price" required>
 
-          <label for="price">Price:</label>
-          <input type="number" id="price" name="price" required>
-
-          <label for="difficulty">Difficulty:</label>
-          <select id="difficulty" name="difficulty" class="input-field" required>
-            <option value="">Select Difficulty</option>
-            <option value="Easy">Easy</option>
-            <option value="Moderate">Moderate</option>
-            <option value="Challenging">Challenging</option>
-          </select>
-
-          <label for="about">About:</label>
+          <label for="about">Description:</label>
           <textarea id="about" name="about" required></textarea>
 
-          <label for="itinerary">Itinerary:</label>
-          <textarea id="itinerary" name="itinerary" required></textarea>
         <button type="submit" name="submit">Submit</button>
         </form>
     </div>

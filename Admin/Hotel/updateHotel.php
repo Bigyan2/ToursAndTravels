@@ -19,7 +19,7 @@ if(!isset($_SESSION['id'])){
   <?php
     require_once "../../Backend/getData.php";
     $id=$_GET['id'];
-    $row = getPackageData($id);
+    $row = fetchHotelByid($id);
   ?>
    <div class="Dassh">
         <div class="hype">  
@@ -51,43 +51,30 @@ if(!isset($_SESSION['id'])){
                 </div>
             </div>
         </div>
-<div class="content">
-<form method="POST" action="../../Backend/Package/update.php">
-    <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <input type="text" id="package-name" name="package-name" >
 
-    <label for="package-name">Package Name:</label>
-    <input type="text" id="package-name" name="package-name" value=<?php echo $row['PackageName']; ?> required>
+    <div class="content">
+      <form method="POST" action="../../Backend/Hotel/update.php">
+          <input type="hidden" name="id" value="<?php echo $id; ?>">
 
-    <label for="total-days">Total Days:</label>
-    <input type="number" id="total-days" name="total-days" value=<?php echo $row['Days']; ?> required > 
+          <label for="hotel-name">Hotel Name:</label>
+          <input type="text" id="hotel-name" name="hotel-name" value=<?php echo $row['HotelName']; ?> required>
 
-    <label for="location">Location:</label>
-    <input type="text" id="location" name="location" value=<?php echo $row['LocationName']; ?> required>
+          <label for="location">Location:</label>
+          <input type="text" id="location" name="location" value=<?php echo $row['HotelLocation']; ?> required>
 
-    <label for="image-link">Image Link:</label>
-    <input type="text" id="image-link" name="image-link" value=<?php echo $row['ImageLink']; ?> required>
+          <label for="image-link">Image Link:</label>
+          <input type="text" id="image-link" name="image-link" value=<?php echo $row['HotelImage']; ?> required>
 
-    <label for="rating">Rating:</label>
-    <input type="number" id="rating" name="rating" value=<?php echo $row['Rating']; ?> required>
+          <label for="hotel-price">Price:</label>
+          <input type="text" id="hotel-price" name="hotel-price" value=<?php echo $row['HotelPrice']; ?> required>
 
-    <label for="price">Price:</label>
-    <input type="number" id="price" name="price" value=<?php echo $row['Price']; ?> required>
+          <label for="about">Description:</label>
+          <textarea id="about" name="about"  required><?php echo $row['HotelDescription']; ?></textarea>
 
-    <label for="difficulty">Difficulty:</label>
-    <select id="difficulty" name="difficulty" class="input-field" value=<?php echo $row['Difficulty']; ?> required>
-      <option value="">Select Difficulty</option>
-      <option value="Easy" <?php if ($row['Difficulty'] == 'Easy') { echo ' selected'; } ?>>Easy</option>
-      <option value="Moderate" <?php if ($row['Difficulty'] == 'Moderate') { echo ' selected'; } ?>>Moderate</option>
-      <option value="Challenging" <?php if ($row['Difficulty'] == 'Challenging') { echo ' selected'; } ?>>Challenging</option>
-    </select>
-
-    <label for="about">About:</label>
-    <textarea id="about" name="about" required ><?php echo $row['About']; ?> </textarea>
-
-    <label for="itinerary">Itinerary:</label>
-    <textarea id="itinerary" name="itinerary" required><?php echo $row['Itinerary']; ?></textarea>
-  <button type="submit" name="submit">Update</button>
-</form>
+        <button type="submit" name="submit">Submit</button>
+        </form>
+    </div>
 </div>
 </div>
 </div>

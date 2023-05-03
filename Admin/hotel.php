@@ -69,24 +69,20 @@ if(!isset($_SESSION['id'])){
 
                     <table id="packageTable">
                         <tr>
-                            <th>Package Name</th>
-                            <th>Duration</th>
+                            <th>Hotel Name</th>
                             <th>Location</th>
-                            <th>Price(in Rs)</th>
-                            <th>Difficulty</th>
+                            <th>Description</th>
                             <th>Action</th>
                         </tr>
                         <?php 
                           require_once "../Backend/getData.php";
-                          $result = fetchPackages();
+                          $result = fetchHotels();
                           while($row=mysqli_fetch_assoc($result)){
                             echo "<tr>";
-                              echo "<td>".$row['PackageName']."</td>";
-                              echo "<td>".$row['Days']."</td>";
-                              echo "<td>".$row['LocationName']."</td>";
-                              echo "<td>".$row['Price']."</td>";
-                              echo "<td>".$row['Difficulty']."</td>";
-                              $id = $row['Package_id'];
+                              echo "<td>".$row['HotelName']."</td>";
+                              echo "<td>".$row['HotelLocation']."</td>";
+                              echo "<td>".$row['HotelDescription']."</td>";
+                              $id = $row['HotelId'];
                               echo "<td><a href='./Hotel/updateHotel.php?id=".$id."'><i class='fas fa-pencil-alt'></i></a>";
                               echo "<a onClick=\"forAction('You want to delete the Hotel','../Backend/Hotel/delete.php?id=" . $id . "')\"><i class='fas fa-trash-alt'></i></a>";
                             echo "</tr>";     
@@ -97,5 +93,28 @@ if(!isset($_SESSION['id'])){
             </div>
         </div>
     </div>
+    
+<script>
+    function search() {
+    let input, filter, table, tr, td, txtValue;
+    input = document.getElementById("find");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("packageTable");
+    tr = table.getElementsByTagName("tr");
+
+    for (let i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+</script>
 </body>
 </html>
+

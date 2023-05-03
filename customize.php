@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['id'])){
+	$_SESSION['success'] = "Please Login First";
+	header("Location: Login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +12,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Package/style.css">
+    <script type="text/javascript" src="display/icons.js"></script>
     <title>Customize</title>
     <style>
     </style>
-    
 </head> 
 <body>
    <div class="container" id="home"> 
@@ -18,19 +25,18 @@
                  <div class="ho vclass">
                     <a class="home" href="index.php">Home</a>
                     <a class="package" href="suggestionLocation.php">Packages</a>
-                    <a class="booking" href="#booking">My Bookings</a>
-                    <a class="hotel" href="#hotels">Hotels</a>
+                    <a class="booking" href="mybookings.php">My Bookings</a>
+                    <a class="hotel" href="hotel.php">Hotels</a>
                  </div>
             
             <ul class="navbar vclass">
                 <div>
                     <?php
-                    session_start();
                     if (isset($_SESSION['id'])){
-                        echo '<a class="signup-btn" <a href="Backend/logout.php">Log Out</a></a>';
+                        echo '<div class="profile"><a href="Account.php"><i class="fa-solid fa-user"></i></a></div>';
                     } else {
                         echo '<a class="signup-btn" <a href="SignUp.php">Sign Up</a></a>';
-                        echo '<a class="login-btn" <a href="login.php">Login</a></a>';
+                        echo '<a class="login-btn" <a href="Login.php">Login</a></a>';
                     }
                     ?>
                 </div>
@@ -88,23 +94,19 @@
 
 <?php
 include "Backend/addData.php";
+if (isset($_POST['submit'])){
+    $fromLocation = $_POST['TFrom'];
+    $toLocation = $_POST['TripTo'];
+    $DateFrom = $_POST['DateFrom'];
+    $DateTo = $_POST['DateTo'];
+    $email = $_POST['email'];
+    $children = $_POST['children'];
+    $adult = $_POST['adult'];
+    $phone = $_POST['phone'];
 
-if (isset($_SESSION['id'])){
-    if (isset($_POST['submit'])){
-        $fromLocation = $_POST['TFrom'];
-        $toLocation = $_POST['TripTo'];
-        $DateFrom = $_POST['DateFrom'];
-        $DateTo = $_POST['DateTo'];
-        $email = $_POST['email'];
-        $children = $_POST['children'];
-        $adult = $_POST['adult'];
-        $phone = $_POST['phone'];
-
-        addCustomPackages($fromLocation,$toLocation,$DateFrom,$DateTo,$email,$children,$adult,$phone,$_SESSION['id']);
+    if(addCustomPackages($fromLocation,$toLocation,$DateFrom,$DateTo,$email,$children,$adult,$phone,$_SESSION['id'])){
+        $_SESSION['mssg'] = "Customized Successfully";
+        echo '<script>window.location.href = "suggestionLocation.php"</script>';
     }
-} else {
-    $_SESSION['error'] = "Please Login First";
-    echo '<script>window.location.href = "Login.php"</script>';
 }
-
 ?>

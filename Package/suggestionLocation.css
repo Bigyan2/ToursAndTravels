@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     
 }
 .container{
@@ -185,6 +185,10 @@ h1{
 
 }
 
+a {
+    text-decoration: none !important;
+    color: black;
+}
 .customize_button{
     
 
@@ -305,82 +309,77 @@ nav{
     top: 0;
     left: 0;
     z-index: 9999;
-}
-
-nav .logo{
+  }
+  
+  nav .logo{
     width: 50px;
     margin: 2vh;
     margin-left: 3%;
     margin-top: 1%;
-}
-
-.navbar{
+  }
+  
+  .navbar{
     margin-right: 3%;
-}
-.navbar a{
+  }
+  
+  .navbar a{
+    text-decoration: none;
     color: rgb(0, 0, 0);
     font-size: 18px;
     padding: 10px 22px;
     border-radius: 4px;
-    font-weight: 500;   
     text-decoration: none;
     transition: ease 0.40s;
-}
-
-.ho{
+  }
+  
+  .ho{
     margin-right: 30%;
-    color: rgb(232, 215, 215);
+    color: rgb(0, 0, 0);
     font-size: 18px;
     padding: 10px 22px;
     border-radius: 4px;
-    font-weight: 500;   
     text-decoration: none;
     transition: ease 0.40s;
-
-}
-
-.ho .home{
+  }
+  
+  .ho .home{
     display: inline-block;
     color: rgb(0, 0, 0);
     border-radius: 30px;
     transition: ease 0.30s;
     padding: 10px 22px;
-    text-decoration: none;
-}
-
-.ho .package{
+  }
+  
+  .ho .package{
     display: inline-block;
     color: rgb(0, 0, 0);
     border-radius: 30px;
     transition: ease 0.30s;
     padding: 10px 22px;
-    text-decoration: none;
-}
-
-.ho .booking{
+  }
+  
+  .ho .booking{
     display: inline-block;
     color: rgb(0, 0, 0);
     border-radius: 30px;
     transition: ease 0.30s;
     padding: 10px 22px;
-    text-decoration: none;
-}
-.ho .hotel{
+  }
+  .ho .hotel{
     display: inline-block;
     color: rgb(0, 0, 0);
     border-radius: 30px;
     transition: ease 0.30s;
     padding: 10px 22px;
-    text-decoration: none;
-}
-
-.ho a:hover,.ho a.active{
-    background: rgb(195, 235, 199);
+  }
+  
+  .ho a:hover,.ho a.active{
+    background: purple;
     color: black;
     box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
     border-radius: 5px;
-}
-.navbar .signup-btn {
+  }
+  .navbar .signup-btn {
     display: inline-block;
     color: rgb(255, 248, 248);
     background-color: rgb(18, 18, 18);
@@ -388,18 +387,18 @@ nav .logo{
     transition: ease 0.30s;
     padding: 10px 22px;
     margin-right: 10px;
-}
-
-.navbar .login-btn {
+  }
+  
+  .navbar .login-btn {
     display: inline-block;
     color: rgb(255, 248, 248);
     background-color: rgb(18, 18, 18);
     border-radius: 30px;
     transition: ease 0.30s;
     padding: 10px 22px;
-}
-
-.navbar .signup-btn:hover, .navbar .login-btn:hover {
+  }
+  
+  .navbar .signup-btn:hover, .navbar .login-btn:hover {
     display: inline-block;
     transform: scale(1.0);
     color: rgb(255, 255, 255);
@@ -407,7 +406,19 @@ nav .logo{
     box-shadow: 5px 10px 30px rgba(11, 11, 11, 0.4);
     border-radius: 20px;
     padding: 10px 30px;
+  }
+    
+  .profile{
+    text-align:right;
+    margin-right: 80px;
+}
+  
+.profile i{
+    width: 40px;
+    font-size: 1.5em;
 }
 
-    
+.profile i:hover{
+    cursor: pointer;
+}  
 

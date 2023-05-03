@@ -5,15 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="Package/suggestionLocation.css">
+    <script type="text/javascript" src="display/sweetalert.min.js"></script>
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <script
       src="https://kit.fontawesome.com/97f454a94a.js"
       crossorigin="anonymous"
     ></script>
-    <title>Suggestion Location</title>
+    <script type="text/javascript" src="display/icons.js"></script>
+    <title>Packages</title>
   </head>
   <body>
+    <?php 
+    session_start();
+    if (isset($_SESSION['mssg'])){
+      echo '<script>swal("'.$_SESSION['mssg'].'", {icon: "success"})</script>';
+      unset($_SESSION['mssg']);
+    } else if (isset($_SESSION['canceled'])){
+      echo '<script>swal("'.$_SESSION['canceled'].'", {icon: "error"})</script>';
+      unset($_SESSION['canceled']);
+    }
+
+  ?>
     <div class="conatainer">
               <nav>
             <img src ="logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
@@ -21,8 +34,8 @@
                  <div class="ho">
                     <a class="home" href="index.php">Home</a>
                     <a class="package" href="suggestionLocation.php">Packages</a>
-                    <a class="booking" href="#booking">My Bookings</a>
-                    <a class="hotel" href="#hotels">Hotels</a>
+                    <a class="booking" href="mybookings.php">My Bookings</a>
+                    <a class="hotel" href="hotel.php">Hotels</a>
                  </div>
           <form action="/action_page.php" class="search_box">
             <input type="text" placeholder="Search.." id="find" onkeyup="search()"> 
@@ -31,12 +44,11 @@
             <ul class="navbar">
                 <div>
                     <?php
-                    session_start();
                     if (isset($_SESSION['id'])){
-                        echo '<a class="signup-btn" <a href="Backend/logout.php">Log Out</a></a>';
+                        echo '<div class="profile"><a href="Account.php"><i class="fa-solid fa-user"></i></a></div>';
                     } else {
                         echo '<a class="signup-btn" <a href="SignUp.php">Sign Up</a></a>';
-                        echo '<a class="login-btn" <a href="login.php">Login</a></a>';
+                        echo '<a class="login-btn" <a href="Login.php">Login</a></a>';
                     }
                     ?>
                 </div>
@@ -50,22 +62,28 @@
         $result = fetchPackages();
         while($row = mysqli_fetch_array($result)){
           echo '<div class="locations">';
+          echo '<a href="Package/package-description.php?id='.$row['Package_id'].'">';
           echo '<img src="'.$row["ImageLink"].'">';
          
           echo '<div class="location">';
 
             echo "<h3>".$row['PackageName']."</h3>";
-            echo '<i class="fa-solid fa-star" style="color: #fec700;"></i>';
-            echo '<i class="fa-solid fa-star" style="color: #fec700;"></i>';
-            echo '<i class="fa-solid fa-star" style="color: #fec700;"></i>';
-            echo '<i class="fa-solid fa-star" style="color: #fec700;"></i>';
-            echo '<i class="fa-solid fa-star" style="color: #fec700;"></i>';
+            $stars = "";
+            $rating = $row['Rating'];
+            for ($i = 1; $i <= 5; $i++) {
+                if ($i <= $rating) {
+                    $stars .= "<i class='fa-sharp fa-solid fa-star' style='color: #fec700;'></i>";
+                } else {
+                    $stars .= "<i class='fa fa-star checked'></i>";
+                }
+            }
+            echo $stars;
            
            echo '</div>';
 
            echo '<div class="location_name">';
             echo '<p>'.$row['LocationName'].'</p>';
-             echo '<p>'."Rs". $row['Price'].'</p>';
+             echo '<p>'."Rs ". $row['Price'].'</p>';
             
              
            echo '</div>';
@@ -73,11 +91,12 @@
            echo '<div class="location_price">';
 
             echo '<p><i class="fa-solid fa-person-hiking fa-2xl"></i>'.$row['PackageName'].'</p>';
-            echo '<p><i class="fa-regular fa-calendar-days fa-2xl"></i>'.$row['Days'] ."Days".'</p>';
+            echo '<p><i class="fa-regular fa-calendar-days fa-2xl"></i>'.$row['Days'] ." Days".'</p>';
 
-            echo '<p><i class="fa-regular fa-gauge fa-2xl"></i>'.$row['Difficulty'].'</p>';
+            echo '<p><i class="fas fa-tachometer-alt fa-2xl"></i>'.$row['Difficulty'].'</p>';
           echo '</div>';
-          
+                  echo '</a>';
+
         echo '</div>';
         }
       ?>

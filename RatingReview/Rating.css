@@ -119,24 +119,70 @@ nav .logo{
   padding: 10px 30px;
 }
 
-.Rating {
-  max-width: 800px;
-  margin: 0 auto; 
-  padding: 200px;
-  max-width: 800px;
+.ratingBox {
+  margin-left: 35%;
+  margin-top: 9%;
+  max-width: 400px;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  align-self: center;
 }
 
-.heading {
-  font-size: 25px;
-  margin-right: 25px;
+.ratingBox h1,h2{
+  font-size: 24px;
+  margin: 0;
+  text-align: center;
+  color: #333;
 }
 
-.fa {
-  font-size: 25px;
+.stars {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.checked {
-  color: orange;
+.stars input {
+  display: none;
+}
+
+.stars label {
+  font-size: 40px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.stars label:hover,
+.stars label:hover ~ label,
+.stars input:checked ~ label {
+  color: #f7d701;
+}
+
+.button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+.error {
+  color: #f00;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .side {
@@ -150,6 +196,7 @@ nav .logo{
   width: 70%;
   margin-top: 10px;
 }
+
 .right {
   text-align: right;
 }
@@ -164,6 +211,7 @@ nav .logo{
   text-align: center;
   color: white;
 }
+
 .bar-5 {width: 90%; height: 18px; background-color: gold;}
 .bar-4 {width: 50%; height: 18px; background-color: gold;}
 .bar-3 {width: 20%; height: 18px; background-color: gold;}
@@ -177,27 +225,6 @@ nav .logo{
     display: none;
   }
 }
-.addrev {
-  display: inline-block;
-  margin-top: 5vh;
-  font-size: 25px;
-  padding: 10px 30px;
-  color: rgb(0, 0, 0);
-  background-color: transparent;
-  border-radius: 20px;
-  transition: ease 0.30s;
-  cursor: pointer;
-}
-
-.addrev:hover {
-  transform: scale(1.1);
-  color: white;
-  background-color: rgb(121, 127, 123);
-  box-shadow: 5px 10px 30px rgba(11, 11, 11, 0.4);
-  padding: 10px 30px;
-  cursor:pointer;
-}
-
 
 
 .footer{
@@ -284,3 +311,61 @@ nav .logo{
 .footlinks li :active{
   color:#090909;
 }
+
+.container{
+  padding:70px;
+  background-color: whitesmoke;
+  margin-top: 10%;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 25px;
+}
+.review{
+  padding-top: 25px;
+}
+
+.textarea{
+  position: absolute;
+  width: 1222px;
+  height: 371px;
+  left: 122px;
+  top: 419px;
+  background:rgb(206, 186, 186);
+}
+.submit {
+display: inline-block;
+align-items: center;
+margin-top: 5vh;
+font-size: 15px;
+padding: 10px 30px;
+color: rgb(255, 255, 255);
+background-color:#785CE7;
+border-radius: 20px;
+transition: ease 0.30s;
+cursor: pointer;
+}
+
+
+.submit:hover {
+  transform: scale(1.1);
+  color: white;
+  background-color: #785CE7;
+  box-shadow: 5px 10px 30px rgba(11, 11, 11, 0.4);
+  padding: 5px 15px;
+  cursor:pointer;
+}
+
+.profile{
+  text-align:right;
+  margin-right: 80px;
+}
+
+.profile i{
+  width: 40px;
+  font-size: 1.5em;
+}
+
+.profile i:hover{
+  cursor: pointer;
+}  
+

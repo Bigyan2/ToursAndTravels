@@ -80,7 +80,7 @@ if(!isset($_SESSION['id'])){
                           while($row=mysqli_fetch_assoc($result)){
                             echo "<tr>";
                               echo "<td>".$row['Username']."</td>";
-                              echo "<td>".$row['Feedback']."</td>";
+                              echo "<td>".$row['Feed']."</td>";
                               echo "<td>".$row['status']."</td>";
                               $id = $row['FeedbackId'];
                               echo "<td><a onClick=\"forAction('You want to approve the Feedback','../Backend/Approve/approveFeedback.php?id=" . $id . "&approve=yes')\"><i class='fas fa-check'></i></a>";

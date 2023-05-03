@@ -8,7 +8,7 @@
     <link href="display/toastr.min.css" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="logincreate/SignUP.css">
+    <link rel="stylesheet" href="logincreate/signup.css">
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <script src="https://kit.fontawesome.com/97f454a94a.js" crossorigin="anonymous"></script>
@@ -25,19 +25,16 @@
             }
         ?>
     <div class="container">
-        <div class="top_navbar">
-            <div class="logos">
-              <img src="logo.png" alt="logo" />
-            </div>
-            <div class="nav_button">
-              <a  href="index.php">Home</a>
-              <a href="suggestionLocation.php">Package</a>
-              <a href="#Booking">My Bookings</a>
-              <a href="#Hotel">Hotels</a>
-            </div>
-            
-           
-          </div>
+        <nav>
+            <img src ="./logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
+                 onclick="window.location.reload();">
+                 <div class="ho">
+                    <a class="home" href="index.php">Home</a>
+                    <a class="package" href="suggestionLocation.php">Packages</a>
+                    <a class="booking" href="mybookings.php">My Bookings</a>
+                    <a class="hotel" href="hotel.php">Hotels</a>
+                 </div>
+        </nav>  
         <div class="form-box">
             <div class="logo">
                 <img src="logo.png" alt="Project logo">
@@ -129,7 +126,6 @@ if (isset($_POST['submit'])){
 
 $username_pattern = "/^[a-zA-Z0-9]{4,20}$/";
 $email_pattern = "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";
-$password_pattern = "/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/";
 
 $username = $_POST["name"];
 $email = $_POST["email"];
@@ -141,8 +137,8 @@ if (!preg_match($username_pattern, $username)){
     echo '<script>toastr.error("Username should contain one uppercase and one number");</script>';
 } else if(!preg_match($email_pattern, $email)){
     echo '<script>toastr.error("Invalid Email Format. Please try again!!!");</script>';
-} else if(!preg_match($password_pattern,$password)){
-    echo '<script>toastr.error("Invalid Password Format. Please try again!!!");</script>';
+} else if(strlen($password) < 8){
+    echo '<script>toastr.error("Password should be more than 8 characters!!");</script>';
 } else if($password != $confirm_password){
     echo '<script>toastr.error("Password doesnot matches. Please try again!!!");</script>';
 } else {

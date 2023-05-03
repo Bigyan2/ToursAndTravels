@@ -1,23 +1,17 @@
-<?php
-include ('Backend/config.php');
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <script type="text/javascript" src="display/jquery.min.js"></script>
-    <script type="text/javascript" src="display/toastr.min.js"></script>
-    <link href="display/toastr.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../display/jquery.min.js"></script>
+    <script type="text/javascript" src="../display/toastr.min.js"></script>
+    <link href="../display/toastr.min.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="logincreate/login.css">
+    <link rel="stylesheet" href="../logincreate/login.css">
     <script src="https://kit.fontawesome.com/97f454a94a.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet"
-    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <script type="text/javascript" src="display/icons.js"></script>
-    <title>Log in page</title>
+    <title>Forget Password page</title>
 </head>
-
 <body>
 <?php
     session_start();
@@ -31,46 +25,29 @@ include ('Backend/config.php');
 ?>
     <div class="container">
         <nav>
-            <img src ="./logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
+            <img src ="../logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
                  onclick="window.location.reload();">
                  <div class="ho">
-                    <a class="home" href="index.php">Home</a>
-                    <a class="package" href="suggestionLocation.php">Packages</a>
-                    <a class="booking" href="mybookings.php">My Bookings</a>
-                    <a class="hotel" href="hotel.php">Hotels</a>
+                    <a class="home" href="../index.php">Home</a>
+                    <a class="package" href="../suggestionLocation.php">Packages</a>
+                    <a class="booking" href="../mybookings.php">My Bookings</a>
+                    <a class="hotel" href="../hotel.php">Hotels</a>
                  </div>
         </nav>   
         <div class="form-box">
             <div class="logo">
-                <img src="logo.png" alt="Project logo">
+                <img src="../logo.png" alt="Project logo">
             </div>
-            <h1>Holiday Hype</h1>
-            <form action="Backend/login.php" method="post">
+            <form action="../Backend/forgetPassword.php" method="post">
                 <div class="input-group">
+                <h1>Enter your valid Email Address</h1>
                     <div class="input-field">
-
                         <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="Username" name="username" required>
+                        <input type="text" placeholder="Email Address" name="email" required>
                     </div>
-
-                    <div class="input-field">
-
-                        <i class="fa-solid fa-lock"></i>
-                        <input type="password" placeholder="Password" name="password" required>
-
-
-                    </div>
-                    <p class="forget"><a href="Password/forgetPassword.php">Forget passsword ?</a></p>
                     
-                    <button class="login_button">
-                        Log in</button>
-                    <p>Or</p>
+                    <button class="login_button" name="submit" type="submit">Continue</button>
 
-                    <button class="login_button" onclick="window.location = '<?php echo $login_url ?>'" type="button">
-                        <img src="logincreate/google.png" alt="google">
-                        Login with google
-                    </button>
-                    <p class="no_account">No account : <a href="SignUp.php">Sign Up</a></p>
                  </div>
             </form>
         </div>

@@ -1,40 +1,41 @@
+<?php
+  require_once("Backend/addData.php");
+  require_once("Backend/getData.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script type="text/javascript" src="../display/jquery.min.js"></script>
-    <script type="text/javascript" src="../display/toastr.min.js"></script>
-    <link href="../display/toastr.min.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holiday Hype</title>
+    <script type="text/javascript" src="display/sweetalert.min.js"></script>
+    <title>Ratings</title>
     <link rel="icon" href="./logo.png">
-    <link rel="stylesheet" type="text/css" href="RatingReview/Rating.css">
+    <link rel="stylesheet" type="text/css" href="RatingReview/rating.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script type="text/javascript" src="display/icons.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
-    <div class="content" id="home"> 
         <nav>
             <img src ="./logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
                  onclick="window.location.reload();">
-                 <li class="ho">
-                 <a class="home" href="index.php">Home</a>
-                <a class="package" href="suggestionLocation.php">Packages</a>
-                <a class="booking" href="#booking">My Bookings</a>
-                <a class="hotel" href="#hotels">Hotels</a>
-
-                 </li>
+                 <div class="ho">
+                    <a class="home" href="index.php">Home</a>
+                    <a class="package" href="suggestionLocation.php">Packages</a>
+                    <a class="booking" href="mybookings.php">My Bookings</a>
+                    <a class="hotel" href="hotel.php">Hotels</a>
+                 </div>
             
             <ul class="navbar">
                 <li>
                     <?php
                     session_start();
                     if (isset($_SESSION['id'])){
-                        echo '<a class="signup-btn" <a href="Backend/logout.php">Log Out</a></a>';
+                        echo '<div class="profile"><a href="Account.php"><i class="fa-solid fa-user"></i></a></div>';
                     } else {
                         echo '<a class="signup-btn" <a href="SignUp.php">Sign Up</a></a>';
                         echo '<a class="login-btn" <a href="Login.php">Login</a></a>';
@@ -42,113 +43,32 @@
                     ?>
                 </li>
             </ul>
-        </nav>  
-    </div>
+        </nav>     
 
+      <div class="ratingBox">
+          <h1>Rate this system</h1>
+          <form method="POST" action="">
+            <div class="stars">
+              <input type="radio" name="rating" value="5" id="5-stars" required>
+              <label for="5-stars">&#9733;</label>
+              <input type="radio" name="rating" value="4" id="4-stars">
+              <label for="4-stars">&#9733;</label>
+              <input type="radio" name="rating" value="3" id="3-stars">
+              <label for="3-stars">&#9733;</label>
+              <input type="radio" name="rating" value="2" id="2-stars">
+              <label for="2-stars">&#9733;</label>
+              <input type="radio" name="rating" value="1" id="1-star">
+              <label for="1-star">&#9733;</label>
+            </div>
 
-<div class ="Rating">
-<h1>Rating and Feedbacks</h1>
-<div class ="background">
-<style>
-  span {
-    font-size: 2rem;
-    color: gray;
-  }
-  span.selected {
-    color: gold;
-  }
-</style>
+          <h2>Give Some Feedbacks</h2>
 
-<div>
-  <span>&#9733;</span>
-  <span>&#9733;</span>
-  <span>&#9733;</span>
-  <span>&#9733;</span>
-  <span>&#9733;</span>
-</div>
+        <textarea  rows="5" cols="50" style="width: 371px; height: 226px;" name="feedback" required></textarea><br>
 
-<script>
-  const stars = document.querySelectorAll('span');
-  stars.forEach((star) => {
-    star.addEventListener('click', () => {
-      star.classList.toggle('selected');
-    });
-  });
-</script>
+        <input type="submit" value="Submit" class="button" name="submit">
 
-<span class="heading">User Rating</span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span>
-<p>4.7 average based on 22 reviews.</p>
-<hr style="border:3px solid #f1f1f1">
-
-<div class="row">
-  <div class="side">
-    <div>5 star</div>
-  </div>
-  <div class="middle">
-    <div class="bar-container">
-      <div class="bar-5"></div>
-    </div>
-  </div>
-  <div class="side right">
-    <div>15</div>
-  </div>
-  <div class="side">
-    <div>4 star</div>
-  </div>
-  <div class="middle">
-    <div class="bar-container">
-      <div class="bar-4"></div>
-    </div>
-  </div>
-  <div class="side right">
-    <div>6</div>
-  </div>
-  <div class="side">
-    <div>3 star</div>
-  </div>
-  <div class="middle">
-    <div class="bar-container">
-      <div class="bar-3"></div>
-    </div>
-  </div>
-  <div class="side right">
-    <div>1</div>
-  </div>
-  <div class="side">
-    <div>2 star</div>
-  </div>
-  <div class="middle">
-    <div class="bar-container">
-      <div class="bar-2"></div>
-    </div>
-  </div>
-  <div class="side right">
-    <div>0</div>
-  </div>
-  <div class="side">
-    <div>1 star</div>
-  </div>
-  <div class="middle">
-    <div class="bar-container">
-      <div class="bar-1"></div>
-    </div>
-  </div>
-  <div class="side right">
-    <div>0</div>
-  </div>
-</div>
-</div>
-<div class="addrev">
-  <iconify-icon icon="material-symbols:add-circle"></iconify-icon> Add Review
-</div>
-</div>
-
-
+        </form>
+        </div>
 
 <section class="footer">
   <div class="foot">
@@ -171,7 +91,6 @@
               <a href="https://www.tiktok.com/" target="_blank"><i class='bx bxl-tiktok' ></i></a>
           </div>
       </div>
-      
   </div>
 </div>
 <div class="end">
@@ -180,3 +99,21 @@
 </section>
 </body>
 </html>
+
+
+<?php
+  if(isset($_POST['submit'])){
+    if(isset($_SESSION['id'])){
+      $rating = $_POST["rating"];
+      $feedback = $_POST["feedback"];
+
+      if(addRating($rating, $_SESSION['id']) and addFeedbacks($feedback, $_SESSION['id'])){
+        echo '<script>swal("Successfilly added Rating and Feedback", {icon: "success"})</script>';
+      }
+    } else {
+      $_SESSION['error'] = "Please Login First";
+      header("Location: Login.php");
+    }
+  }
+?>
+

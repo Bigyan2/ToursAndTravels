@@ -75,6 +75,7 @@ if(!isset($_SESSION['id'])){
                             <th>Location</th>
                             <th>Price(in Rs)</th>
                             <th>Difficulty</th>
+                            <th>Accommodation</th>
                             <th>Action</th>
                         </tr>
                         <?php 
@@ -87,6 +88,7 @@ if(!isset($_SESSION['id'])){
                               echo "<td>".$row['LocationName']."</td>";
                               echo "<td>".$row['Price']."</td>";
                               echo "<td>".$row['Difficulty']."</td>";
+                              echo "<td>".$row['Accomodation']."</td>";
                               $id = $row['Package_id'];
                               echo "<td><a href='./Package/updatePackage.php?id=".$id."'><i class='fas fa-pencil-alt'></i></a>";
                               echo "<a onClick=\"forAction('You want to delete the Package','../Backend/Package/delete.php?id=" . $id . "')\"><i class='fas fa-trash-alt'></i></a>";

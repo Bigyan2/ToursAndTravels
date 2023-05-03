@@ -114,16 +114,16 @@ if(!isset($_SESSION['id'])){
                           while($row=mysqli_fetch_assoc($result)){
                             echo "<tr>";
                               echo "<td>".$row['Username']."</td>";
-                              echo "<td>".$row['FromLocation']."</td>";
-                              echo "<td>".$row['ToLocation']."</td>";
-                              echo "<td>".$row['StartDate']."</td>";
-                              echo "<td>".$row['EndDate']."</td>";
-                              echo "<td>".$row['ChildrenNumber']."</td>";
-                              echo "<td>".$row['AdultNumber']."</td>";
+                              echo "<td>".$row['TripFrom']."</td>";
+                              echo "<td>".$row['TripTo']."</td>";
+                              echo "<td>".$row['DateFrom']."</td>";
+                              echo "<td>".$row['DateTo']."</td>";
+                              echo "<td>".$row['Children']."</td>";
+                              echo "<td>".$row['Adult']."</td>";
                               echo "<td>".$row['Status']."</td>";
-                              $id = $row['CustomId'];
-                               echo "<td><a onClick=\"forAction('You want to approve the Customized Booking','../Backend/Approve/approveBooking.php?id=" . $id . "&approve=yes')\"><i class='fas fa-check'></i></a>";
-                              echo "<a onClick=\"forAction('You want to reject the Customized Booking','../Backend/Approve/approveBooking.php?id=" . $id . "&approve=no')\"><i class='fas fa-times'></i></a></td>";
+                              $id = $row['Package_id'];
+                              echo "<td><a onClick=\"forAction('You want to approve the Customized Booking','../Backend/Approve/approvePackage.php?id=" . $id . "&approve=yes')\"><i class='fas fa-check'></i></a>";
+                              echo "<a onClick=\"forAction('You want to reject the Customized Booking','../Backend/Approve/approvePackage.php?id=" . $id . "&approve=no')\"><i class='fas fa-times'></i></a></td>";
                             echo "</tr>";     
                           } 
                       ?>

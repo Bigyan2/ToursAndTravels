@@ -72,6 +72,13 @@ if(!isset($_SESSION['id'])){
           <label for="price">Price:</label>
           <input type="number" id="price" name="price" required>
 
+
+          <label for="transportation">Transportation:</label>
+          <input type="text" id="transportation" name="transportation"  required>
+
+          <label for="accomodation">Accommodation:</label>
+          <input type="text" id="accomodation" name="accomodation" required>
+
           <label for="difficulty">Difficulty:</label>
           <select id="difficulty" name="difficulty" class="input-field" required>
             <option value="">Select Difficulty</option>
