@@ -8,6 +8,7 @@
     <script type="text/javascript" src="display/sweetalert.min.js"></script>
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="icon" href="./logo.png">
     <script
       src="https://kit.fontawesome.com/97f454a94a.js"
       crossorigin="anonymous"
