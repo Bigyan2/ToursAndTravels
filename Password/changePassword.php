@@ -17,6 +17,8 @@ if(checkToken($token)){
     <link href="../display/toastr.min.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Holiday Hype</title>
+    <link rel="icon" href="./logo.png">
     <link rel="stylesheet" href="../logincreate/login.css">
     <script src="https://kit.fontawesome.com/97f454a94a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">

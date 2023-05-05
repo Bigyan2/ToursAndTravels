@@ -8,6 +8,8 @@
     <link href="display/toastr.min.css" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up</title>
+    <link rel="icon" href="./logo.png">
     <link rel="stylesheet" href="logincreate/signup.css">
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">

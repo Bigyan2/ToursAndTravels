@@ -11,6 +11,8 @@ if(!isset($_SESSION['id'])){
 	<title>My Bookings</title>
 	<script type="text/javascript" src="display/icons.js"></script>
 	<link rel="stylesheet" type="text/css" href="Hotel_Booking/style.css">
+	<title>My Bookings</title>
+    <link rel="icon" href="./logo.png">
 </head>
 <body>
         <nav>

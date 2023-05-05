@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suggestions</title>
+    <link rel="icon" href="./logo.png">
     <link rel="stylesheet" href="Package/suggestionLocation.css">
     <script type="text/javascript" src="display/sweetalert.min.js"></script>
     <link rel="stylesheet"
