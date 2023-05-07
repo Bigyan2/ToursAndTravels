@@ -10,9 +10,9 @@ include ('Backend/config.php');
     <link href="display/toastr.min.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
-    <link rel="icon" href="./logo.png">
     <link rel="stylesheet" href="logincreate/login.css">
+    <link rel="stylesheet" type="text/css" href="Responsive/responsive.css">
+    <link rel="icon" href="./logo.png">
     <script src="https://kit.fontawesome.com/97f454a94a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -32,15 +32,16 @@ include ('Backend/config.php');
     }
 ?>
     <div class="container">
-        <nav>
-            <img src ="./logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
+                <nav class="wholenav hnav">
+            <img src ="logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
                  onclick="window.location.reload();">
-                 <div class="ho">
+                 <div class="ho hide show">
                     <a class="home" href="index.php">Home</a>
                     <a class="package" href="suggestionLocation.php">Packages</a>
                     <a class="booking" href="mybookings.php">My Bookings</a>
                     <a class="hotel" href="hotel.php">Hotels</a>
                  </div>
+            <img src="Responsive/ham.png" alt="hambeger" class="burger" >
         </nav>   
         <div class="form-box">
             <div class="logo">
@@ -108,3 +109,4 @@ include ('Backend/config.php');
  </div>
 </body>
 </html>
+<script src="Responsive/responsives.js"></script>

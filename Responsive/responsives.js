@@ -15,7 +15,7 @@ burger.addEventListener ('click',()=>{
     height.classList.toggle('height');
 
 
-})
+});
  
 
 

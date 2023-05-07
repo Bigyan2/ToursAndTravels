@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if(!isset($_SESSION['id'])){
+if(!isset($_SESSION['idz'])){
     header("Location: ../index.php");
 }
 ?>
@@ -12,8 +12,6 @@ if(!isset($_SESSION['id'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holiday Hype</title>
-    <link rel="icon" href="./logo.png">
     <link rel="stylesheet" href="Dashboard/dash.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Admin Panel</title>
@@ -112,7 +110,7 @@ if(!isset($_SESSION['id'])){
                         </tr>
                         <?php 
                           require_once "../Backend/getData.php";
-                          $result = fetchCustomPacakge();
+                          $result = fetchCustomizedPackage();
                           while($row=mysqli_fetch_assoc($result)){
                             echo "<tr>";
                               echo "<td>".$row['Username']."</td>";
@@ -122,7 +120,7 @@ if(!isset($_SESSION['id'])){
                               echo "<td>".$row['DateTo']."</td>";
                               echo "<td>".$row['Children']."</td>";
                               echo "<td>".$row['Adult']."</td>";
-                              echo "<td>".$row['Status']."</td>";
+                              echo "<td>".$row['status']."</td>";
                               $id = $row['Package_id'];
                               echo "<td><a onClick=\"forAction('You want to approve the Customized Booking','../Backend/Approve/approvePackage.php?id=" . $id . "&approve=yes')\"><i class='fas fa-check'></i></a>";
                               echo "<a onClick=\"forAction('You want to reject the Customized Booking','../Backend/Approve/approvePackage.php?id=" . $id . "&approve=no')\"><i class='fas fa-times'></i></a></td>";

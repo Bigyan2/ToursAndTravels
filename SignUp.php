@@ -8,12 +8,12 @@
     <link href="display/toastr.min.css" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sign Up</title>
-    <link rel="icon" href="./logo.png">
     <link rel="stylesheet" href="logincreate/signup.css">
+    <link rel="stylesheet" type="text/css" href="Responsive/responsive.css">
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <script src="https://kit.fontawesome.com/97f454a94a.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="./logo.png">
 	<title>Sign Up page</title>
 </head>
 <body>
@@ -27,16 +27,17 @@
             }
         ?>
     <div class="container">
-        <nav>
-            <img src ="./logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
+                <nav class="wholenav hnav">
+            <img src ="logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
                  onclick="window.location.reload();">
-                 <div class="ho">
+                 <div class="ho hide show">
                     <a class="home" href="index.php">Home</a>
                     <a class="package" href="suggestionLocation.php">Packages</a>
                     <a class="booking" href="mybookings.php">My Bookings</a>
                     <a class="hotel" href="hotel.php">Hotels</a>
                  </div>
-        </nav>  
+            <img src="Responsive/ham.png" alt="hambeger" class="burger" >
+        </nav>   
         <div class="form-box">
             <div class="logo">
                 <img src="logo.png" alt="Project logo">
@@ -122,6 +123,7 @@
 	
 </body>
 </html>
+<script src="Responsive/responsives.js"></script>
 
 <?php   
 if (isset($_POST['submit'])){

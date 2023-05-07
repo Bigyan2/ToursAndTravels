@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+      <link rel="stylesheet" type="text/css" href="Responsive/responsive.css">
+    <script type="text/javascript" src="Responsive/responsives.js"></script>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Suggestions</title>
-    <link rel="icon" href="./logo.png">
     <link rel="stylesheet" href="Package/suggestionLocation.css">
+      <link rel="stylesheet" type="text/css" href="Responsive/responsive.css">
     <script type="text/javascript" src="display/sweetalert.min.js"></script>
+    <link rel="icon" href="./logo.png">
     <link rel="stylesheet"
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link rel="icon" href="./logo.png">
     <script
       src="https://kit.fontawesome.com/97f454a94a.js"
       crossorigin="anonymous"
@@ -31,20 +32,19 @@
 
   ?>
     <div class="conatainer">
-              <nav>
+        <nav class="wholenav hnav">
             <img src ="logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
                  onclick="window.location.reload();">
-                 <div class="ho">
+                 <div class="ho hide show">
                     <a class="home" href="index.php">Home</a>
                     <a class="package" href="suggestionLocation.php">Packages</a>
                     <a class="booking" href="mybookings.php">My Bookings</a>
                     <a class="hotel" href="hotel.php">Hotels</a>
                  </div>
-          <form action="/action_page.php" class="search_box">
+          <form action="/action_page.php" class="search_box hide show">
             <input type="text" placeholder="Search.." id="find" onkeyup="search()"> 
           </form>
-
-            <ul class="navbar">
+            <ul class="navbar hide show">
                 <div>
                     <?php
                     if (isset($_SESSION['id'])){
@@ -56,7 +56,8 @@
                     ?>
                 </div>
             </ul>
-        </nav>  
+            <img src="Responsive/ham.png" alt="hambeger" class="burger" >
+        </nav>    
 
       <h1>Suggested Locations</h1>
       <div class="location_box">
@@ -84,7 +85,7 @@
            
            echo '</div>';
 
-           echo '<div class="location_name">';
+           echo '<div class="location_name" id="locationName">';
             echo '<p>'.$row['LocationName'].'</p>';
              echo '<p>'."Rs ". $row['Price'].'</p>';
             
@@ -107,7 +108,7 @@
 
      <div class="customize_container">
       <p>You can also customize your booking at the place you want to go.</p>
-      <input type="button" value="Customize" class="customize_button" onClick="document.location.href='customize.php'">
+      <input type="button" value="Customize" class="customize_button" onClick="document.location.href='Package/customize.php'">
 
      </div>
 
@@ -159,5 +160,4 @@ function search() {
 </script>
 </body>
 </html>
-
-
+<script src="Responsive/responsives.js"></script>

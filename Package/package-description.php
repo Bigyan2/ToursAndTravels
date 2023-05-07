@@ -9,8 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Holiday Hype</title>
-    <link rel="icon" href="./logo.png">
     <link rel="stylesheet" type="text/css" href="package-description.css">
+    <link rel="stylesheet" type="text/css" href="../Responsive/responsive.css">
+    <link rel="icon" href="../logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script type="text/javascript" src="../display/icons.js"></script>
@@ -25,19 +26,20 @@
 
 </head>
 <body >
-    <div class="container">
-        <nav>
+<nav class="wholenav hnav">
             <img src ="../logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
                  onclick="window.location.reload();">
-                 <div class="ho">
+                 <div class="ho hide show">
                     <a class="home" href="../index.php">Home</a>
                     <a class="package" href="../suggestionLocation.php">Packages</a>
                     <a class="booking" href="../mybookings.php">My Bookings</a>
                     <a class="hotel" href="../hotel.php">Hotels</a>
                  </div>
-            
-            <ul class="navbar">
-                <li>
+          <form action="/action_page.php" class="search_box hide show">
+            <input type="hidden" placeholder="Search.." id="find" onkeyup="search()"> 
+          </form>
+            <ul class="navbar hide show">
+                <div>
                     <?php
                     if (isset($_SESSION['id'])){
                         echo '<div class="profile"><a href="../Account.php"><i class="fa-solid fa-user"></i></a></div>';
@@ -46,8 +48,9 @@
                         echo '<a class="login-btn" <a href="../Login.php">Login</a></a>';
                     }
                     ?>
-                </li>
+                </div>
             </ul>
+            <img src="../Responsive/ham.png" alt="hambeger" class="burger" >
         </nav>   
 
         <div style="overflow-x:hidden;width:100%"> 
@@ -189,3 +192,4 @@
     
 </body>
 </html>
+<script src="../Responsive/responsives.js"></script>

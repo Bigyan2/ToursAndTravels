@@ -7,10 +7,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel</title>
-    <link rel="icon" href="./logo.png">
     <link rel="icon" href="./logo.png">
     <link rel="stylesheet" type="text/css" href="Hotel_Booking/hotelPage.css">
+    <link rel="stylesheet" type="text/css" href="Responsive/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script type="text/javascript" src="display/icons.js"></script>
@@ -25,18 +24,20 @@
 </head>
 <body>
   <div class="container">
-        <nav>
-            <img src ="./logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
+        <nav class="wholenav hnav">
+            <img src ="logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
                  onclick="window.location.reload();">
-                 <div class="ho">
+                 <div class="ho hide show">
                     <a class="home" href="index.php">Home</a>
                     <a class="package" href="suggestionLocation.php">Packages</a>
                     <a class="booking" href="mybookings.php">My Bookings</a>
                     <a class="hotel" href="hotel.php">Hotels</a>
                  </div>
-            
-            <ul class="navbar">
-                <li>
+          <form action="/action_page.php" class="search_box hide show">
+            <input type="hidden" placeholder="Search.."> 
+          </form>
+            <ul class="navbar hide show">
+                <div>
                     <?php
                     session_start();
                     if (isset($_SESSION['id'])){
@@ -46,9 +47,10 @@
                         echo '<a class="login-btn" <a href="Login.php">Login</a></a>';
                     }
                     ?>
-                </li>
+                </div>
             </ul>
-        </nav>  
+            <img src="Responsive/ham.png" alt="hambeger" class="burger" >
+        </nav>   
         <div class="title">
             <p>TOP HOTEL IN THE CITY</p>
         </div>
@@ -80,7 +82,7 @@
                             <i class="fa-solid fa-location-dot"></i><?php echo $row["HotelLocation"] ?>
                         </p>
                         <p class="hotel-author">
-                            <i class="fa-solid fa-bed"></i>King Size Bed
+                            <i class="fas fa-phone"></i><?php echo $row["Contact"] ?>
                         </p>
                         <br>
                     </div>
@@ -143,7 +145,7 @@ function search() {
     let filter = document.getElementById('find').value.toUpperCase();
     let items = document.querySelectorAll('.hotel-info-grid');
     for (let i = 0; i < items.length; i++) {
-        let title = items[i].getElementsByClassName('hotel-title')[0];
+        let title = items[i].getElementsByClassName('hotel-author')[0];
         let value = title.textContent || title.innerText;
         if (value.toUpperCase().indexOf(filter) > -1) {
             items[i].style.display = "";
@@ -155,3 +157,4 @@ function search() {
 </script>
 </body>
 </html>
+<script src="Responsive/responsives.js"></script>

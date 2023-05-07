@@ -11,22 +11,24 @@ if(!isset($_SESSION['id'])){
 	<title>My Bookings</title>
 	<script type="text/javascript" src="display/icons.js"></script>
 	<link rel="stylesheet" type="text/css" href="Hotel_Booking/style.css">
-	<title>My Bookings</title>
-    <link rel="icon" href="./logo.png">
+	<link rel="stylesheet" type="text/css" href="Responsive/responsive.css">
+	<link rel="icon" href="./logo.png">
 </head>
 <body>
-        <nav>
-            <img src ="./logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
+ <nav class="wholenav hnav">
+            <img src ="logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
                  onclick="window.location.reload();">
-                 <div class="ho">
+                 <div class="ho hide show">
                     <a class="home" href="index.php">Home</a>
                     <a class="package" href="suggestionLocation.php">Packages</a>
                     <a class="booking" href="mybookings.php">My Bookings</a>
                     <a class="hotel" href="hotel.php">Hotels</a>
                  </div>
-            
-            <ul class="navbar">
-                <li>
+          <form action="/action_page.php" class="search_box hide show">
+            <input type="hidden" placeholder="Search.." id="find" onkeyup="search()"> 
+          </form>
+            <ul class="navbar hide show">
+                <div>
                     <?php
                     if (isset($_SESSION['id'])){
                         echo '<div class="profile"><a href="Account.php"><i class="fa-solid fa-user"></i></a></div>';
@@ -35,9 +37,11 @@ if(!isset($_SESSION['id'])){
                         echo '<a class="login-btn" <a href="Login.php">Login</a></a>';
                     }
                     ?>
-                </li>
+                </div>
             </ul>
-        </nav>  
+            <img src="Responsive/ham.png" alt="hambeger" class="burger" >
+        </nav>   
+
 	<main>
 		<section>
 			<h2>Bookings</h2>
@@ -89,3 +93,4 @@ if(!isset($_SESSION['id'])){
 	</main>
 </body>
 </html>
+<script src="Responsive/responsives.js"></script>

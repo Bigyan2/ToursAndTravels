@@ -120,16 +120,39 @@ nav .logo{
 }
 
 .ratingBox {
-  margin-left: 35%;
-  margin-top: 9%;
   max-width: 400px;
   background-color: #f7f7f7;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  align-self: center;
+  margin-left: 20%;
 }
 
+.reviewBox{
+  max-width: 400px;
+  min-width: 400px;
+  max-height: 500px;
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-left: 10%;
+  overflow-y: scroll;
+}
+
+.review {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.review .name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.review .rating {
+  color: #FFD700; /* Set the color for the rating */
+  margin-bottom: 5px;
+}
 .ratingBox h1,h2{
   font-size: 24px;
   margin: 0;
@@ -313,12 +336,11 @@ nav .logo{
 }
 
 .container{
+  display: flex;
+  flex-direction: row;
   padding:70px;
+  align-items: center;
   background-color: whitesmoke;
-  margin-top: 10%;
-  margin-left: 30%;
-  margin-right: 30%;
-  border-radius: 25px;
 }
 .review{
   padding-top: 25px;
@@ -368,4 +390,5 @@ cursor: pointer;
 .profile i:hover{
   cursor: pointer;
 }  
+
 

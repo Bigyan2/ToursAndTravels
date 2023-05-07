@@ -1,0 +1,155 @@
+.burger{
+    width: 0px;
+    position: absolute;
+    right: 20px;
+    top: 0px;
+    display: none;
+}
+
+
+/* media queries */
+
+@media only screen and (max-width: 1297px){
+    .ho{
+  
+        margin-right: 10%;
+    }
+    .search_box input[type=text] {
+       
+        width: 200px;
+    }
+
+    }
+    @media only screen and (max-width: 1105px)
+    {
+    .search_box input[type=text] {
+       
+        width: 120px;
+    }
+}
+@media only screen and (max-width: 993px)
+    {
+        .ho .home{
+            padding: 10px 10px;
+          }
+          .ho .package{
+            padding: 10px 10px;
+          }
+          .ho .booking{
+            padding: 10px 10px;
+          } 
+          .ho .hotel{
+            padding: 10px 10px;
+          }  
+     }
+
+@media only screen and (max-width: 993px)
+     {
+         .ho .home{
+             padding: 10px 7px;
+           }
+           .ho .package{
+             padding: 10px 7px;
+           }
+           .ho .booking{
+             padding: 10px 7px;
+           } 
+           .ho .hotel{
+             padding: 10px 7px;
+           }  
+      }
+
+      @media only screen and (max-width: 850px)
+      {
+          .ho .home{
+              padding: 10px 5px;
+            }
+            .ho .package{
+              padding: 10px 5px;
+            }
+            .ho .booking{
+              padding: 10px 5px;
+            } 
+            .ho .hotel{
+              padding: 10px 5px;
+            }  
+       }
+       
+        /* Ham */
+       @media only screen and (max-width: 830px)
+       {
+        .ho .home{
+            padding: 6px 
+          }
+          .ho .package{
+            padding: 6px;
+          }
+          .ho .booking{
+            padding: 6px;
+          } 
+          .ho .hotel{
+            padding: 6px;
+          }
+          .height
+          {
+            margin-top: 312px;
+          }
+          nav .logo {
+            width: 33px;
+            margin-top: 11px;
+        }
+
+        .ho {
+            display: flex;
+            flex-direction: column;
+            padding: 1px 22px;
+        }
+        .search_box
+        {
+            display: flex;
+            flex-direction: column;
+            padding-left: 20px;
+            margin-left: 65px;
+        } 
+        .fa-solid fa-user{
+          display: flex;
+          flex-direction: column;
+          padding-left: 20px;
+          margin-left: 65px;
+        }
+        .navbar
+        {
+            display: flex;
+            flex-direction: column;
+            margin-left: 5px;
+        }
+
+        .wholenav
+            {
+                display: inline;
+                flex-direction: column;
+            }
+            .wholenav
+            {
+              height: 0;
+            }
+            .hnav {
+                width: 100%;
+                height:287px;
+            }
+
+            .burger{
+              width: 40px;
+              display: block;
+              top: 9px;
+          }   
+        
+          .hide
+          {
+            opacity: 0%;
+          }
+          .show
+          {
+            opacity: 100%;
+          }
+       }

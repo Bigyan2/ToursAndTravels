@@ -12,6 +12,7 @@
     <title>Ratings</title>
     <link rel="icon" href="./logo.png">
     <link rel="stylesheet" type="text/css" href="RatingReview/rating.css">
+    <link rel="stylesheet" type="text/css" href="Responsive/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script type="text/javascript" src="display/icons.js"></script>
@@ -20,20 +21,21 @@
     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 <body>
-        <nav>
-            <img src ="./logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
+        <nav class="wholenav hnav">
+            <img src ="logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
                  onclick="window.location.reload();">
-                 <div class="ho">
+                 <div class="ho hide show">
                     <a class="home" href="index.php">Home</a>
                     <a class="package" href="suggestionLocation.php">Packages</a>
                     <a class="booking" href="mybookings.php">My Bookings</a>
                     <a class="hotel" href="hotel.php">Hotels</a>
                  </div>
-            
-            <ul class="navbar">
-                <li>
+          <form action="/action_page.php" class="search_box hide show">
+            <input type="hidden" placeholder="Search.." id="find" onkeyup="search()"> 
+          </form>
+            <ul class="navbar hide show">
+                <div>
                     <?php
-                    session_start();
                     if (isset($_SESSION['id'])){
                         echo '<div class="profile"><a href="Account.php"><i class="fa-solid fa-user"></i></a></div>';
                     } else {
@@ -41,10 +43,11 @@
                         echo '<a class="login-btn" <a href="Login.php">Login</a></a>';
                     }
                     ?>
-                </li>
+                </div>
             </ul>
-        </nav>     
-
+            <img src="Responsive/ham.png" alt="hambeger" class="burger" >
+        </nav>    
+<div class="container">
       <div class="ratingBox">
           <h1>Rate this system</h1>
           <form method="POST" action="">
@@ -70,6 +73,44 @@
         </form>
         </div>
 
+<div class="reviewBox">
+  <h1>All Reviews</h1>
+  <?php
+  $result = fetchRatings();
+  if (mysqli_num_rows($result) == 0) {
+    echo "<span>No reviews to show</span>";
+  } else {
+    while ($row = mysqli_fetch_assoc($result)) {
+  ?>
+      <div class="review">
+        <div class="name"><?php echo $row['Username'] ?></div>
+        <div class="rating">
+          <?php
+          $stars = "";
+          $rating = $row['Ratings'];
+          for ($i = 1; $i <= 5; $i++) {
+            if ($i <= $rating) {
+              $stars .= "<i class='fas fa-star' style='color: #fec700;'></i>";
+            } else {
+              $stars .= "<i class='fa fa-star' style='color: grey;'></i>";
+            }
+          }
+          echo $stars;
+          ?>
+        </div>
+        <br>
+        <div class="content">
+          <p><?php echo fetchFeedbackById($row['User_Id']); ?></p>
+        </div>
+      </div>
+      <br><hr><br>
+  <?php
+    }
+  }
+  ?>
+</div>
+
+        </div>
 <section class="footer">
   <div class="foot">
       <div class="footer-content">
@@ -93,12 +134,14 @@
       </div>
   </div>
 </div>
+
 <div class="end">
   <p>Copyright © 2023 Holiday Hype  All Rights Reserved.</p>
 </div>
 </section>
 </body>
 </html>
+<script src="Responsive/responsives.js"></script>
 
 
 <?php
@@ -108,7 +151,9 @@
       $feedback = $_POST["feedback"];
 
       if(addRating($rating, $_SESSION['id']) and addFeedbacks($feedback, $_SESSION['id'])){
-        echo '<script>swal("Successfilly added Rating and Feedback", {icon: "success"})</script>';
+        echo '<script>swal("Successfully added Rating and Feedback", {icon: "success"})</script>';
+      } else {
+        echo '<script>swal("Already rated the system", {icon: "error"})</script>';
       }
     } else {
       $_SESSION['error'] = "Please Login First";

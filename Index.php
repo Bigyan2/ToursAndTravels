@@ -11,6 +11,7 @@
     <link rel="icon" href="./logo.png">
     <script type="text/javascript" src="display/icons.js"></script>
     <link rel="stylesheet" type="text/css" href="LandingPage/Style.css">
+    <link rel="stylesheet" type="text/css" href="Responsive/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -26,18 +27,20 @@
         }
     ?>
     <div class="content" id="home"> 
-        <nav>
-            <img src ="./logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
+        <nav class="wholenav hnav">
+            <img src ="logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
                  onclick="window.location.reload();">
-                 <div class="ho">
+                 <div class="ho hide show">
                     <a class="home" href="index.php">Home</a>
                     <a class="package" href="suggestionLocation.php">Packages</a>
                     <a class="booking" href="mybookings.php">My Bookings</a>
                     <a class="hotel" href="hotel.php">Hotels</a>
                  </div>
-            
-            <ul class="navbar">
-                <li>
+          <form action="/action_page.php" class="search_box hide show">
+            <input type="hidden" placeholder="Search.." id="find" onkeyup="search()"> 
+          </form>
+            <ul class="navbar hide show">
+                <div>
                     <?php
                     if (isset($_SESSION['id'])){
                         echo '<div class="profile"><a href="Account.php"><i class="fa-solid fa-user"></i></a></div>';
@@ -46,9 +49,11 @@
                         echo '<a class="login-btn" <a href="Login.php">Login</a></a>';
                     }
                     ?>
-                </li>
+                </div>
             </ul>
-        </nav>        
+            <img src="Responsive/ham.png" alt="hambeger" class="burger" >
+        </nav>   
+
         <div class="background">
             <div class="title">
                 <h1>Lets enjoy your trip with Holiday Hype</h1>
@@ -111,3 +116,5 @@
 </section>
 </body>
 </html>
+<script src="Responsive/responsives.js"></script>
+

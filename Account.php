@@ -11,6 +11,7 @@
     <link rel="icon" href="./logo.png">
     <script type="text/javascript" src="display/icons.js"></script>
     <link rel="stylesheet" type="text/css" href="Account/Acc_Style.css">
+        <link rel="stylesheet" type="text/css" href="Responsive/responsive.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -29,17 +30,19 @@
     } 
 ?>
     <div class="content" id="home"> 
-        <nav>
+        <nav class="wholenav hnav">
             <img src ="logo.png" href="#" class="logo" alt="Logo" title="Holiday Hype"
                  onclick="window.location.reload();">
-                 <div class="ho vclass">
+                 <div class="ho hide show">
                     <a class="home" href="index.php">Home</a>
                     <a class="package" href="suggestionLocation.php">Packages</a>
                     <a class="booking" href="mybookings.php">My Bookings</a>
                     <a class="hotel" href="hotel.php">Hotels</a>
                  </div>
-            
-            <ul class="navbar vclass">
+          <form action="/action_page.php" class="search_box hide show">
+            <input type="hidden" placeholder="Search.." id="find" onkeyup="search()"> 
+          </form>
+            <ul class="navbar hide show">
                 <div>
                     <?php
                     if (isset($_SESSION['id'])){
@@ -51,7 +54,8 @@
                     ?>
                 </div>
             </ul>
-        </nav>  
+            <img src="Responsive/ham.png" alt="hambeger" class="burger" >
+        </nav>   
         
     </div>
 <div class="main">
@@ -72,12 +76,13 @@
                         <h3><img src="Account/edit.png">Edit Details </h3>
                     </div>
                     <form method="POST" action="">
-                        <label for="name">Username:</label><input type="text" value=<?php echo $row['Username'] ?> id="name" name="name" required><br><br>
-                        
+                        <label for="name">Username:</label><input type="text" value=<?php echo $row['Username'] ?> id="name" name="name" required>
+                        <button  class="button" name="submitUsername">Update Username</button>
+                        <br><br>
+
                         <label for="email">Email Address:</label>
-                        <input type="email" id="email" value=<?php echo $row['Email'] ?> name="email" required><br><br>
-                    
-                        <button  class="button" name="submit">Update</button>
+                        <input type="email" id="email" name="email" value=<?php echo $row['Email'] ?>>
+                        <button  class="button" name="submitEmail">Update Email</button>
                       </form>
                 </div>
 
@@ -138,20 +143,37 @@
 </section>
 </body>
 </html>
+<script src="Responsive/responsives.js"></script>
 
 <?php
 require_once "Backend/addData.php";
 
-if(isset($_POST['submit'])){
+if(isset($_POST['submitUsername'])){
     $username = $_POST['name'];
+
+    if (updateUsername($_SESSION['id'] ,$username)){
+        $_SESSION['success'] = "Username Updated Successfully";
+        echo '<script>window.location.href = "Account.php"</script>';
+    } else {
+        $_SESSION['error'] = "Username Already Taken";
+        echo '<script>window.location.href = "Account.php"</script>';
+    }   
+}
+
+
+if(isset($_POST['submitEmail'])){
     $email = $_POST['email'];
 
-    if (updateUser($_SESSION['id'] ,$username, $email)){
-        $_SESSION['success'] = "User Updated Successfully";
+    if (updateEmail($_SESSION['id'] ,$email)){
+        $_SESSION['success'] = "Email Updated Successfully";
+        echo '<script>window.location.href = "Account.php"</script>';
+    } else {
+        $_SESSION['error'] = "Email Already Taken";
         echo '<script>window.location.href = "Account.php"</script>';
     }
 }
 
+ 
 if(isset($_POST['update'])){
     $old_password = $_POST['old_password'];
     $new_password = $_POST['new_password'];
