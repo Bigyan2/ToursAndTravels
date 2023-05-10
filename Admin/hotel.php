@@ -7,6 +7,7 @@ if(!isset($_SESSION['idz'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" href="../logo.png">
     <script src="confirm.js"></script>
     <script src="../display/sweetalert.min.js"></script>
     <meta charset="UTF-8">

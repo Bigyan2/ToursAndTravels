@@ -14,7 +14,7 @@ if(!isset($_SESSION['id'])){
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="../display/icons.js"></script>
     <link rel="stylesheet" type="text/css" href="../Responsive/responsive.css">
-        <link rel="icon" href="../logo.png">
+    <link rel="icon" href="../logo.png">
     <title>Customize</title>
     <style>
     </style>

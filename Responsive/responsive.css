@@ -111,11 +111,9 @@
             padding-left: 20px;
             margin-left: 65px;
         } 
-        .fa-solid fa-user{
-          display: flex;
-          flex-direction: column;
-          padding-left: 20px;
-          margin-left: 65px;
+        .profile{
+          float: left;
+          margin-top: 10px;
         }
         .navbar
         {
@@ -153,3 +151,7 @@
             opacity: 100%;
           }
        }
+
+
+
+

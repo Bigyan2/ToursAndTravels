@@ -199,9 +199,7 @@ nav{
     display: grid;
     grid-template-columns: 80px 1fr;
 }
-.picture{
-    
-}
+
 .hotel-picture{
     width: 350px;
     height: 250px;
@@ -418,3 +416,139 @@ nav{
 .profile i:hover{
     cursor: pointer;
 }  
+
+
+
+/* media quiries */
+@media only screen and (max-width: 700px) 
+
+{
+  .contain{
+   margin-left: 2%;
+   margin-right: 20%;
+   margin-bottom: 70px;
+}
+
+.search-button{
+    
+    
+    padding-left: 4px;
+    padding-right: 2px;
+    padding-top: 11px;
+    margin-top: 39px;
+    padding-bottom: 11px;
+    border-radius: 15px;
+    }
+ 
+    .hotel-stats {
+        font-size: 13px;
+        color: rgb(96, 96, 96);
+    }
+    .hotel-picture {
+        width: 299px;
+        height: 231px;
+        border-radius: 5px;
+    }
+    .hotel-title {
+        margin-top: 5px;
+        font-size: 30px;
+    }
+    .hotel-info {
+        margin-left: 289px;
+    }
+    .hotel-price {
+        font-weight: 500;
+        font-size: 30px;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .choose p {
+        font-size: 30px;
+        font-weight: 400;
+}
+.hotel-picture {
+    width: 262px;
+    height: 177px;
+}
+.hotel-author {
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+.hotel-stats {
+    font-size: 11px;
+}
+.hotel-price {
+    font-weight: 400;
+    font-size: 15px;
+}
+.hotel-stay {
+    font-size: 13px;
+    margin-top: 12px;
+    color: rgb(96, 96, 96);
+}
+.hotel-info {
+    margin-left: 235px;
+}
+}
+
+
+
+@media only screen and (max-width: 473px) {
+    .choose p {
+        font-size: 30px;
+        font-weight: 450;
+}
+.hotel-info {
+    margin-left: 116px;
+}
+.search-button{
+    
+    
+    padding-left: 4px;
+    padding-right: 2px;
+    padding-top: 6px;
+    margin-top: 39px;
+    padding-bottom: 6px;
+    border-radius: 15px;
+    width: 120px;
+    }
+
+   
+    .hotel-picture {
+        width: 165px;
+        height: 118px;
+    }
+    .hotel-title {
+        margin-top: 2px;
+        margin-bottom: 4px;
+        font-size: 18px;
+    }
+    .hotel-author {
+        margin-top: 2px;
+        font-size: 12px;
+    }
+    
+    .hotel-stats {
+        font-size: 8px;
+    }
+    .hotel-price {
+        font-weight: 400;
+        font-size: 12px;
+    }
+    .hotel-stay {
+        font-size: 12px;
+        margin-top: 7px;
+        color: rgb(96, 96, 96);
+    }
+   
+  .contain{
+   margin-bottom: 20px;
+    }
+    .title p{
+        padding-bottom: 130px;
+    }
+}
+
